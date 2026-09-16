@@ -110,7 +110,7 @@ def _(mo):
 
 @app.cell
 def _():
-    freight_charges = [16.75, 22.25, 25.00, 20.25, 36.25]
+    freight_charges = [999.99, 22.25, 25.00, 20.25, 36.25]
     freight_charges
     return (freight_charges,)
 
@@ -139,7 +139,6 @@ def _(mo):
 @app.cell
 def _(freight_charges):
     freight_charges[0]
-
     return
 
 
@@ -147,13 +146,6 @@ def _(freight_charges):
 def _(freight_charges):
     len(freight_charges)
     return
-
-
-@app.cell
-def _(freight_charges):
-    total = sum(freight_charges)
-    total
-    return (total,)
 
 
 @app.cell(hide_code=True)
@@ -179,7 +171,6 @@ def _(mo):
 @app.cell
 def _():
     x = 10
-
     return (x,)
 
 
@@ -191,31 +182,38 @@ def _(x):
 
 @app.cell
 def _():
-    order = 3
-
-    return
-
-
-app._unparsable_cell(
-    r"""
-    order 12
-    """,
-    name="_"
-)
+    orders = 3
+    return (orders,)
 
 
 @app.cell
-def _(total):
-    print (total)
+def _(orders):
+    orders * 12
     return
 
 
-app._unparsable_cell(
-    r"""
-    total=
-    """,
-    name="_"
-)
+@app.cell
+def _():
+    total1 = 5
+    return (total1,)
+
+
+@app.cell
+def _():
+    return
+
+
+@app.cell
+def _(total1):
+    print(total1)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    total = sum(freight_charges)
+    total
+    return
 
 
 @app.cell(hide_code=True)
@@ -297,9 +295,9 @@ def _(mo):
 
 @app.cell
 def _():
-    orders = [10248, 10249, 10250, 10251, 10252]
-    orders
-    return (orders,)
+    orders1 = [10248, 10249, 10250, 10251, 10252]
+    orders1
+    return (orders1,)
 
 
 @app.cell(hide_code=True)
@@ -318,6 +316,54 @@ def _(mo):
     6. `orders * 2`, then `orders + freight_charges`. Neither one is an error.
     7. `sorted(freight_charges)`, then `sorted(freight_charges, reverse=True)`. What did `reverse=True` change, and did `freight_charges` itself change?
     """)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[-1]
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[:3]
+    return
+
+
+@app.cell
+def _(orders1):
+    orders1[0]
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[0]
+    return
+
+
+@app.cell
+def _():
+    category = "Confections"
+    return (category,)
+
+
+@app.cell
+def _(category):
+    len(category)
+    return
+
+
+@app.cell
+def _(orders1):
+    sum(orders1)
+    return
+
+
+@app.cell
+def _(orders1):
+    orders1 * 2
     return
 
 
@@ -429,6 +475,11 @@ def _(mo):
 
     Your sentence should show `$120.50` and `$24.10`.
     """)
+    return
+
+
+@app.cell
+def _():
     return
 
 
