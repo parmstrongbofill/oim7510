@@ -367,6 +367,24 @@ def _(orders1):
     return
 
 
+@app.cell
+def _(freight_charges, orders1):
+    orders1 + freight_charges
+    return
+
+
+@app.cell
+def _(freight_charges):
+    sorted(freight_charges)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    sorted(freight_charges, reverse=True)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -378,8 +396,8 @@ def _(mo):
 
 
 @app.cell
-def _(freight_charges, orders):
-    type(freight_charges[0]), type(orders[0]), type("Confections"), type(freight_charges[0] > 20)
+def _(freight_charges, orders1):
+    type(freight_charges[0]), type(orders1[0]), type("Confections"), type(freight_charges[0] > 20)
     return
 
 
