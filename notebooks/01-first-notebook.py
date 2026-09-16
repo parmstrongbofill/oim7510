@@ -177,23 +177,45 @@ def _(mo):
 
 
 @app.cell
+def _():
+    x = 10
+
+    return (x,)
+
+
+@app.cell
+def _(x):
+    print(x)
+    return
+
+
+@app.cell
+def _():
+    order = 3
+
+    return
+
+
+app._unparsable_cell(
+    r"""
+    order 12
+    """,
+    name="_"
+)
+
+
+@app.cell
 def _(total):
-    print(total)
+    print (total)
     return
 
 
-@app.cell
-def _():
-    x = 5
-    print (x)
-    return
-
-
-@app.cell
-def _():
-    orders = 3
-    orders * 12
-    return (orders,)
+app._unparsable_cell(
+    r"""
+    total=
+    """,
+    name="_"
+)
 
 
 @app.cell(hide_code=True)
