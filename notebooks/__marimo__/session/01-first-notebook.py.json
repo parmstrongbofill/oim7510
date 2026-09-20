@@ -95,16 +95,9 @@
       "console": []
     },
     {
-      "id": "hZTU",
+      "id": "RGSE",
       "code_hash": "abd5a46c9b2d6515004aada631c3ff55",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<pre class='text-xs'>999.99</pre>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
@@ -121,7 +114,7 @@
       "console": []
     },
     {
-      "id": "Hstk",
+      "id": "emfo",
       "code_hash": "26b4c34487e23e3a6a8a25ca45d5c821",
       "outputs": [
         {
@@ -134,7 +127,7 @@
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "Hstk",
       "code_hash": "d4475896e1bd370365e4d57f0eb2275d",
       "outputs": [
         {
@@ -147,7 +140,7 @@
       "console": []
     },
     {
-      "id": "iLit",
+      "id": "nWHF",
       "code_hash": "ad5a249343db66d92e23b6d38252c4bb",
       "outputs": [
         {
@@ -167,7 +160,7 @@
       ]
     },
     {
-      "id": "ZHCJ",
+      "id": "iLit",
       "code_hash": "91d9005930e9bb8318244b7ad38322c9",
       "outputs": [
         {
@@ -180,7 +173,7 @@
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "ZHCJ",
       "code_hash": "fde8408d386db6d7a0969d78da55bdff",
       "outputs": [
         {
@@ -193,7 +186,7 @@
       "console": []
     },
     {
-      "id": "PJwh",
+      "id": "ROlb",
       "code_hash": "9a73d45670e483f4fe92bd6219c700dc",
       "outputs": [
         {
@@ -206,20 +199,13 @@
       "console": []
     },
     {
-      "id": "uePY",
+      "id": "qnkX",
       "code_hash": null,
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     },
     {
-      "id": "DlUy",
+      "id": "TqIu",
       "code_hash": "af68ab3de6bd2f251f48952fd755e135",
       "outputs": [
         {
@@ -239,7 +225,7 @@
       ]
     },
     {
-      "id": "emfo",
+      "id": "Vxnm",
       "code_hash": "e707e1d0713d0e505ef05956a4278cac",
       "outputs": [
         {
@@ -252,7 +238,7 @@
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "DnEU",
       "code_hash": "94a57b4d2f7415c80ebbf5f23c594311",
       "outputs": [
         {
@@ -265,7 +251,7 @@
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "ulZA",
       "code_hash": "a38d32dbbb47ac81ee857a8e4f587493",
       "outputs": [
         {
@@ -278,7 +264,7 @@
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "ecfG",
       "code_hash": "1c7f5d35f40512380e4e63a7d3602152",
       "outputs": [
         {
@@ -291,7 +277,7 @@
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "Pvdt",
       "code_hash": "c560a73c50a639b3232304257ed0738d",
       "outputs": [
         {
@@ -304,7 +290,7 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "ZBYS",
       "code_hash": "77da7510c24b20cf9a9ed3dd3452fbe1",
       "outputs": [
         {
@@ -317,7 +303,7 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "aLJB",
       "code_hash": "1057f06a192ac3338dafec878b1a2ac3",
       "outputs": [
         {
@@ -330,7 +316,7 @@
       "console": []
     },
     {
-      "id": "IRVe",
+      "id": "nHfw",
       "code_hash": "d442d88ef71a6cd70499a85e4b2797fe",
       "outputs": [
         {
@@ -343,7 +329,7 @@
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "xXTn",
       "code_hash": "24a98ea6d88d50be86f90cf02fd1775b",
       "outputs": [
         {
@@ -356,7 +342,7 @@
       "console": []
     },
     {
-      "id": "ePEp",
+      "id": "AjVT",
       "code_hash": "c0a7a809473e29effbb39c4685dd71f9",
       "outputs": [
         {
@@ -369,7 +355,7 @@
       "console": []
     },
     {
-      "id": "eEiR",
+      "id": "pHFh",
       "code_hash": "20bab0561e08ed42ac58e6591d9ef83f",
       "outputs": [
         {
@@ -382,7 +368,7 @@
       "console": []
     },
     {
-      "id": "gpIS",
+      "id": "NCOB",
       "code_hash": "7b264a3a8abce2fab5638ff8c8275d41",
       "outputs": [
         {
@@ -395,7 +381,7 @@
       "console": []
     },
     {
-      "id": "Tnqq",
+      "id": "aqbW",
       "code_hash": "abd5a46c9b2d6515004aada631c3ff55",
       "outputs": [
         {
@@ -408,7 +394,7 @@
       "console": []
     },
     {
-      "id": "QLgl",
+      "id": "TRpd",
       "code_hash": "139386743b1df296f8693bbc1710242b",
       "outputs": [
         {
@@ -421,7 +407,7 @@
       "console": []
     },
     {
-      "id": "SAmx",
+      "id": "TXez",
       "code_hash": "b8cc9727d967b269366944c811a3f344",
       "outputs": [
         {
@@ -434,7 +420,7 @@
       "console": []
     },
     {
-      "id": "OjUk",
+      "id": "dNNg",
       "code_hash": "968945189cb9694c5d20150dd6a23c6c",
       "outputs": [
         {
@@ -447,7 +433,7 @@
       "console": []
     },
     {
-      "id": "DTgH",
+      "id": "yCnT",
       "code_hash": "5aa7ae0f2594f097978740aa0f9f633d",
       "outputs": [
         {
@@ -460,7 +446,7 @@
       "console": []
     },
     {
-      "id": "yeGb",
+      "id": "wlCL",
       "code_hash": "7cfcd66297fe6755a72247c5e040a8f1",
       "outputs": [
         {
@@ -473,7 +459,7 @@
       "console": []
     },
     {
-      "id": "LZfh",
+      "id": "kqZH",
       "code_hash": "c868ee09c8177da4fbaedcb30ed7efbe",
       "outputs": [
         {
@@ -486,7 +472,7 @@
       "console": []
     },
     {
-      "id": "oLSm",
+      "id": "wAgl",
       "code_hash": "ae7555daaeaad700a408a44157317898",
       "outputs": [
         {
@@ -499,7 +485,7 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "rEll",
       "code_hash": "6d0b81807515509cd78ab5d6bcdf23b9",
       "outputs": [
         {
@@ -512,7 +498,7 @@
       "console": []
     },
     {
-      "id": "AjVT",
+      "id": "dGlV",
       "code_hash": "6ffe6b4822b8a844e9f9b689d1abd34b",
       "outputs": [
         {
@@ -525,7 +511,7 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "SdmI",
       "code_hash": "e37bd35d034f1b1250af1bc0ff154ca7",
       "outputs": [
         {
@@ -538,7 +524,7 @@
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "lgWD",
       "code_hash": "e772d821a86328a255a3c0e7072f418c",
       "outputs": [
         {
@@ -551,7 +537,40 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "yOPj",
+      "code_hash": "f0686281fad1ef40808d636b1ce1fff1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;16.7522.25&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QpBj",
+      "code_hash": "670df440749065272ea17293d93060d6",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "unsupported operand type(s) for +: 'float' and 'str'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"/var/folders/nx/pgn3q8393h37qng71hhdzfch0000gn/T/marimo_3907/__marimo__cell_QpBj_.py\"</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"mf\">16.75</span> <span class=\"o\">+</span> <span class=\"s2\">\"22.25\"</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~^~~~~~~~~</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">unsupported operand type(s) for +: 'float' and 'str'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "fwwy",
       "code_hash": "61c872df0f30ee9fc863188843e1827f",
       "outputs": [
         {
@@ -564,7 +583,7 @@
       "console": []
     },
     {
-      "id": "TRpd",
+      "id": "LJZf",
       "code_hash": "f055d6c47921af028d1e478512b0c4ef",
       "outputs": [
         {
@@ -577,7 +596,46 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "NmuF",
+      "code_hash": "1061f64eea1fdc45d218324185d4bc0d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>True</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "FQmH",
+      "code_hash": "fa74ccaf14ae4d37593fa3e3a8b32203",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>False</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QodH",
+      "code_hash": "8c827640c13f9bce9fc2a9af3489c083",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&lt;class &#x27;bool&#x27;&gt;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "urSm",
       "code_hash": "c769b53cfa5c0d31eb4774ccc90cead4",
       "outputs": [
         {
@@ -590,13 +648,13 @@
       "console": []
     },
     {
-      "id": "dNNg",
+      "id": "jxvo",
       "code_hash": "ab81ca09e82b5615c45e533a8eb8a2d5",
       "outputs": [],
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "mWxS",
       "code_hash": "3412983ccee1651667e60ce26c8ebab7",
       "outputs": [
         {
@@ -609,7 +667,7 @@
       "console": []
     },
     {
-      "id": "wlCL",
+      "id": "CcZR",
       "code_hash": "ae8593286258fa717ee70a219c0780b9",
       "outputs": [
         {
@@ -622,13 +680,27 @@
       "console": []
     },
     {
-      "id": "CISq",
-      "code_hash": null,
-      "outputs": [],
-      "console": []
+      "id": "YWSi",
+      "code_hash": "b4509f84d9942a0f1002eec5b53298d4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "The total freight is $1103.74 and the average charge is $220.75\n",
+          "mimetype": "text/plain"
+        }
+      ]
     },
     {
-      "id": "kqZH",
+      "id": "zlud",
       "code_hash": "820c55de11633da2a9d03c20e93517b6",
       "outputs": [
         {
@@ -641,13 +713,13 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "tZnO",
       "code_hash": "99d2afc68739f124c36b434e4f86adcf",
       "outputs": [],
       "console": []
     },
     {
-      "id": "rEll",
+      "id": "xvXZ",
       "code_hash": "cfb66343400f3ca3ff1c2cef1cf4eb77",
       "outputs": [
         {
@@ -660,7 +732,7 @@
       "console": []
     },
     {
-      "id": "dGlV",
+      "id": "CLip",
       "code_hash": "eaff85162f208add7648c4d43810498a",
       "outputs": [
         {
@@ -673,7 +745,40 @@
       "console": []
     },
     {
-      "id": "SdmI",
+      "id": "xUZa",
+      "code_hash": "95b1c33cff6c9529127f61f99293583d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QNJp",
+      "code_hash": "642b9aeab93b57fa35c0828e4266ae26",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "There are 3 charges below 25, adding up to $67.50\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "YECM",
       "code_hash": "3c0f55b2f8582e207416da282626db3d",
       "outputs": [
         {
@@ -686,7 +791,7 @@
       "console": []
     },
     {
-      "id": "lgWD",
+      "id": "cEAS",
       "code_hash": "ceef6bdc4617e1512188a28309983104",
       "outputs": [
         {
@@ -699,7 +804,7 @@
       "console": []
     },
     {
-      "id": "yOPj",
+      "id": "iXej",
       "code_hash": "830409d9361fd16a4b5b79956f3dae62",
       "outputs": [
         {
@@ -712,7 +817,20 @@
       "console": []
     },
     {
-      "id": "fwwy",
+      "id": "bTNy",
+      "code_hash": "3ecb5a15eac460ce6adc166848ad8c47",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;9.50&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "EJmg",
       "code_hash": "b3a11deac49dcba187ae6c47dcc0854c",
       "outputs": [
         {
@@ -725,7 +843,20 @@
       "console": []
     },
     {
-      "id": "LJZf",
+      "id": "mbXF",
+      "code_hash": "5a05cad51bc8aaab1be956c4aaab6392",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>22.25</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UmEG",
       "code_hash": "9604a4334a5c681e4d051bb1c7468616",
       "outputs": [
         {
@@ -738,7 +869,7 @@
       "console": []
     },
     {
-      "id": "urSm",
+      "id": "vEBW",
       "code_hash": "220c060dad06108b309d7d0e848cd4d6",
       "outputs": [
         {
@@ -751,7 +882,33 @@
       "console": []
     },
     {
-      "id": "jxvo",
+      "id": "JXBn",
+      "code_hash": "cd2618a17f6e9f9bf34fe27ca2231b61",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "'int' object is not iterable",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "Matplotlib is building the font cache; this may take a moment.\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"/var/folders/nx/pgn3q8393h37qng71hhdzfch0000gn/T/marimo_3907/__marimo__cell_JXBn_.py\"</span>, line <span class=\"m\">4</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">_ax</span><span class=\"o\">.</span><span class=\"n\">bar</span><span class=\"p\">([</span><span class=\"nb\">str</span><span class=\"p\">(</span><span class=\"n\">_o</span><span class=\"p\">)</span> <span class=\"k\">for</span> <span class=\"n\">_o</span> <span class=\"ow\">in</span> <span class=\"n\">orders</span><span class=\"p\">],</span> <span class=\"n\">freight_charges</span><span class=\"p\">)</span>\n<span class=\"w\">                               </span><span class=\"pm\">^^^^^^</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">'int' object is not iterable</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "kLmu",
       "code_hash": "3d8a46394aacb87f7fbca6175b3d5175",
       "outputs": [
         {
@@ -764,7 +921,7 @@
       "console": []
     },
     {
-      "id": "mWxS",
+      "id": "IpqN",
       "code_hash": "aeb144ec827e787994efccd05da6699e",
       "outputs": [
         {
