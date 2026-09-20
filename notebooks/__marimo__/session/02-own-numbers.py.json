@@ -1,0 +1,152 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.24.2",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "XXPH",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "apUs",
+      "code_hash": "ff5c65cc4fbd022614b914bfa4cca876",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">How many downloads did each episode of Nota al Margen get, and what was the average per episode?</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NUcH",
+      "code_hash": "267872668e733acc148f0f457ddc5cf2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kRxo",
+      "code_hash": "7d8b21c09fb548818b43eb51a7e16f10",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The first value in <code>downloads</code> (1589) is the download count for episode 1, MOMFLUENCERS.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fSRv",
+      "code_hash": "f26c063d95c79923d92a6c7466b63170",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Rzoy",
+      "code_hash": "7aa3358645be57636de3ab8521428726",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">This error means Python tried to add a number and a piece of text together, and it doesn't know how to combine those two types \u2014 that's why it stopped at 'n/a' instead of finishing the sum</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "gfRn",
+      "code_hash": "76c987835d38a83bff9da58c4227ba09",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">If an episode is missing its download count, I exclude it from the total and the average instead of making up a number.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yqNx",
+      "code_hash": "7f8ba9cd965eea39e2ec15b9aca9d9ae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yQGF",
+      "code_hash": "e7d7a8fabc6063dda0eb625d2f3d4786",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Nota al Margen had 7680 downloads across 5 episodes with valid data, averaging 1536.00 downloads per episode.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "tSSt",
+      "code_hash": "8a0efba1ef72f69cd4d2bdeee0250a23",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>True</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yXyR",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
