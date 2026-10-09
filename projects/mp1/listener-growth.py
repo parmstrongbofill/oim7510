@@ -57,8 +57,8 @@ def _(mo):
 
     *What does your loop carry from one step to the next, the way a running total carries its sum?*
     -  The number of downloads accumulated so far each month (and, in the paid scenario, also the accumulated cost).
-
-    *Which check will you use in section 6, and which two numbers should agree?*
+    -
+     *Which check will you use in section 6, and which two numbers should agree?*
     - If I set the growth rate to 0%, each month's downloads should stay exactly equal to the previous month's, never growing.
 
     *Commit this notebook with the message `mp1: plan before AI`.*
@@ -80,8 +80,20 @@ def _(mo):
 
 @app.cell
 def _():
-    # Your inputs.
-    return
+    # Your inpu# 3. Inputs — every number the project starts from goes here, nowhere else
+
+    current_monthly_downloads = 4812   
+    organic_growth_rate = 0.047        
+    paid_growth_rate = 0.12           
+    monthly_ad_cost = 250             
+    download_goal = 10000             
+    return (
+        current_monthly_downloads,
+        download_goal,
+        monthly_ad_cost,
+        organic_growth_rate,
+        paid_growth_rate,
+    )
 
 
 @app.cell(hide_code=True)
@@ -95,8 +107,41 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(current_monthly_downloads, download_goal, organic_growth_rate):
+    downloads = current_monthly_downloads  
+    months = 0
+    while downloads < download_goal:
+        downloads = downloads * (1 + organic_growth_rate)
+        months = months + 1
+    return downloads, months
+
+
+@app.cell
+def _(download_goal, downloads, months):
+    print(f"Organic growth reaches {download_goal} downloads in {months} months.")
+    print(f"Final downloads: {downloads:.0f}")
     return
+
+
+@app.cell
+def _(
+    current_monthly_downloads,
+    download_goal,
+    monthly_ad_cost,
+    paid_growth_rate,
+):
+    paid_downloads = current_monthly_downloads
+    paid_months = 0
+    total_cost = 0
+    while paid_downloads < download_goal:
+        paid_downloads = paid_downloads * (1 + paid_growth_rate)
+        paid_months = paid_months + 1
+        total_cost = total_cost + monthly_ad_cost
+
+    print(f"Paid growth reaches {download_goal} downloads in {paid_months} months.")
+    print(f"Final downloads: {paid_downloads:.0f}")
+    print(f"Total promotion cost: ${total_cost:.2f}")
+    return paid_downloads, paid_months, total_cost
 
 
 @app.cell(hide_code=True)
@@ -110,7 +155,21 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(
+    download_goal,
+    downloads,
+    months,
+    paid_downloads,
+    paid_months,
+    total_cost,
+):
+    months_saved = months - paid_months
+
+    print("Scenario      Months to goal   Final downloads   Total cost")
+    print(f"Organic       {months:>14}   {downloads:>16.0f}   $0.00")
+    print(f"Paid          {paid_months:>14}   {paid_downloads:>16.0f}   ${total_cost:.2f}")
+
+    print(f"\nPaying for Spotify ads gets Nota al Margen to {download_goal} downloads {months_saved} months sooner than organic growth alone, at a total cost of ${total_cost:.2f}.")
     return
 
 
@@ -125,7 +184,17 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(current_monthly_downloads):
+    _check_downloads = current_monthly_downloads
+    _check_rate = 0
+    _check_months = 0
+    while _check_months < 6:
+        _check_downloads = _check_downloads * (1 + _check_rate)
+        _check_months = _check_months + 1
+
+    print(f"With a 0% growth rate, downloads after 6 months: {_check_downloads:.0f}")
+    print(f"Starting downloads: {current_monthly_downloads}")
+    print(f"Match: {_check_downloads == current_monthly_downloads}")
     return
 
 
@@ -137,6 +206,22 @@ def _(mo):
     *Pick one piece of AI output you did not accept as-is. What did it give you, what did you change, and how did you know? Point to the commit or the cell.*
 
     *If the agent got it right the first time: what did you do to verify that?*
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    While writing the paid-growth scenario cell, I made two mistakes: I referenced the wrong counter variable (paid_months = months + 1 instead of months = months + 1, so the counter never advanced), and the function ended in a bare return with no print, so the results were never displayed. I asked my agent to finish the code, and it corrected both issues
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    I verified it was correct in two ways: by running the Section 6 check (setting the growth rate to 0%, which confirmed downloads stayed flat — Match: True), and by confirming the organic scenario’s result (16 months, 10,034 downloads) matched a manual calculation of 4,812 × (1.047)^16.
     """)
     return
 
