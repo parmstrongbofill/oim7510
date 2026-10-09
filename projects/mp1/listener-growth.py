@@ -236,5 +236,37 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Sensitivity check: how does the paid scenario change if the ad-driven growth rate isn't exactly 12%?
+    """)
+    return
+
+
+@app.cell
+def _(current_monthly_downloads, download_goal, monthly_ad_cost):
+    rates_to_test = [0.06, 0.24]
+
+    for rate in rates_to_test:
+        _downloads = current_monthly_downloads
+        _months = 0
+        _cost = 0
+        while _downloads < download_goal:
+            _downloads = _downloads * (1 + rate)
+            _months = _months + 1
+            _cost = _cost + monthly_ad_cost
+        print(f"At a {rate*100:.0f}% growth rate: {_months} months, final downloads {_downloads:.0f}, total cost ${_cost:.2f}")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Testing growth rates below and above the 12% assumption shows the result is sensitive to that number. At 6%, it takes 13 months and costs $3,250 to reach the goal; at 24%, it takes only 4 months and costs $1,000. The base case (12%) falls in between, at 7 months and $1,750. This means the 12% estimate matters a lot — if the real paid growth rate turns out closer to 6%, the promotion would cost nearly double and take almost twice as long to pay off.
+    """)
+    return
+
+
 if __name__ == "__main__":
     app.run()
