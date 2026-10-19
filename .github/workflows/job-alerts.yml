@@ -1,0 +1,37 @@
+name: Job Alerts
+
+on:
+  schedule:
+    # 13:00 UTC = 9am Boston (EDT, UTC-4) / 8am Boston (EST, UTC-5)
+    - cron: "0 13 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r job-alerts/requirements.txt
+
+      - name: Check for new job postings
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python job-alerts/job_alerts.py
+
+      - name: Save updated state
+        run: |
+          git config user.name "job-alerts-bot"
+          git config user.email "actions@github.com"
+          git add job-alerts/seen_jobs.json
+          git diff --staged --quiet || git commit -m "Update seen jobs state"
+          git push
