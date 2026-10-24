@@ -1,0 +1,197 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.24.2",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BnSi",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ssSp",
+      "code_hash": "7e9b128bb33bdfdd928cc4fb75314189",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"1-the-question\">1. The Question</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lvnc",
+      "code_hash": "41cb1729a2a42e70d3e01541d5e50e88",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">My co-host and I run a literary podcast, and every week we have to choose the book we will discuss. We want a book that is well written, popular right now, and likely to spark conversation, by a well-known author, and short enough to read in a week (300 pages or fewer). Given a literary genre, this tool finds the best-known authors in it, looks at all their books, and picks the one with the best rating that is 300 pages or fewer, so we can choose the book for the next episode.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iSJQ",
+      "code_hash": "726f39f555b0fe3fdfd6bb825f43c7c1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"2-my-plan-before-ai\">2. My Plan Before AI</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YEQT",
+      "code_hash": "c92c1001460b0d5e43654fd3ceb7c79f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>I type a literary genre I\u2019m interested in (for example, magical realism).</li>\n<li>I ask Open Library for the most-edited books in that genre.</li>\n<li>From the top 10 most-edited books, I keep their authors, without repeating anyone.</li>\n<li>For each author, I ask for all their books using the author\u2019s key, with their rating, number of ratings and page count.</li>\n<li>If the API reports more books (numFound) than it sent, I ask for the next page until I have them all.</li>\n<li>I ignore books that are missing a rating or a page count.</li>\n<li>I keep only books with 300 pages or fewer.</li>\n<li>I keep only books with an average rating of 4 or more, from at least 10 ratings.</li>\n<li>I sort the remaining books by rating, best first.</li>\n<li>I show the best book in a table and one sentence for the week\u2019s episode.</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "cepU",
+      "code_hash": "2a58786dccfa11f8b37a31281635e0a6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Functions</strong></span>\n<ul>\n<li>get_genre_authors(genre, top_n): takes a genre and how many books to look at; returns a list of authors (name and key).</li>\n<li>get_author_books(author_key): takes an author's key; returns a list of that author's books (title, rating, number of ratings, pages), going through every page.</li>\n</ul>\n<span class=\"paragraph\"><strong>Addresses</strong></span>\n<ul>\n<li><a href=\"https://openlibrary.org/subjects/{genre}.json\" rel=\"noopener noreferrer\" target=\"_blank\">https://openlibrary.org/subjects/{genre}.json</a></li>\n<li><a href=\"https://openlibrary.org/search.json?author_key={key}&amp;fields=\" rel=\"noopener noreferrer\" target=\"_blank\">https://openlibrary.org/search.json?author_key={key}&amp;fields=</a>...</li>\n</ul>\n<span class=\"paragraph\"><strong>How I'll know I have every record:</strong> for each author, the number of books I collected must equal numFound.</span>\n<span class=\"paragraph\"><strong>Check for section 6:</strong> for one author, the number of books my function returns should equal the numFound I see when I open the address in my browser.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pwdd",
+      "code_hash": "e51470c0a2cf1242091a7f3b8b7a4df0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"3-inputs\">3. Inputs</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "igyl",
+      "code_hash": "3762dd78c77e940fb018b87dd4fd5b93",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"4-the-work\">4. The Work</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Adeu",
+      "code_hash": "e0caf7af9dd4644b508c5f2cf0bc91f6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"5-the-answer\">5. The Answer</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "FJfX",
+      "code_hash": "73fdb3e987fcbb67fc1f3f5d2b0bc464",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"6-how-i-know-these-numbers-are-right\">6. How I Know These Numbers Are Right</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ufdS",
+      "code_hash": "1caf6f8631b13b96e9c59a97c1e12e86",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"7-working-with-the-agent\">7. Working With the Agent</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "OTtn",
+      "code_hash": "f4121d0189e0d8711e1fe878a69a1e04",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"8-reading-it-back\">8. Reading It Back</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mtmx",
+      "code_hash": "3091aaa72d0ad72b97a2e200f242011e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"9-going-further\">9. Going Further</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sgyB",
+      "code_hash": "871cfd35a39007f3eae3497050e95168",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"10-time-spent\">10. Time Spent</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
