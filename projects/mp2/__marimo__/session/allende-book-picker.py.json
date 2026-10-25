@@ -8,7 +8,14 @@
     {
       "id": "Hbol",
       "code_hash": null,
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -103,6 +110,19 @@
       "console": []
     },
     {
+      "id": "mbSG",
+      "code_hash": "eb61678c04b18ebc56fe61a1ed5a64ef",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "igyl",
       "code_hash": "3762dd78c77e940fb018b87dd4fd5b93",
       "outputs": [
@@ -110,6 +130,91 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"4-the-work\">4. The Work</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CCDs",
+      "code_hash": "8e41e132c0014809fc7c6d99010a66d6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "oOZy",
+      "code_hash": "ea464d3df9f3db7aaa622e30f0c7d3c3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kvko",
+      "code_hash": "89cf56c460119111e8a5a875ec46c536",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LvoU",
+      "code_hash": "32678e08e115d759733653fd1c28f89a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Lewis Carroll OL22098A\nMary Shelley OL25342A\nL. Frank Baum OL23431A\nBram Stoker OL31727A\nH. G. Wells OL13066A\nArthur Conan Doyle OL161167A\nGeorge Orwell OL15318546A\nAldous Huxley OL19767A\nJack London OL44633A\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "cFhz",
+      "code_hash": "39919fa6a45e9df1c6a11e052d00e57c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>34898</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Eveu",
+      "code_hash": "87daf3faa09a35e7d9f76bc7fb7921d4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>16</pre>"
           }
         }
       ],
@@ -129,6 +234,46 @@
       "console": []
     },
     {
+      "id": "PVGJ",
+      "code_hash": "726c8798ee810a13d4beadfbd2014dd0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Title                                   Author                     Rating   Pages\nThe Case-Book of Sherlock Holmes        Arthur Conan Doyle           4.55     289\nMemoirs of Sherlock Holmes [11 stories] Arthur Conan Doyle           4.54     259\nOzma of Oz                              L. Frank Baum                4.31     120\nThe Sign of Four                        Arthur Conan Doyle           4.24     156\nThe Doors of Perception / Heaven and HellAldous Huxley                4.24     157\nTo Build a Fire                         Jack London                  4.23      48\nHis Last Bow [8 stories]                Arthur Conan Doyle           4.13     236\nThe Valley of Fear                      Arthur Conan Doyle           4.10     206\nAlice's Adventures in Wonderland        Lewis Carroll                4.05     133\nAlice's Adventures in Wonderland / Through the Looking GlassLewis Carroll                4.04     277\nThrough the Looking-Glass               Lewis Carroll                4.03     134\nAlice in Wonderland in Five Acts        Lewis Carroll                4.03      69\nThe Hound of the Baskervilles           Arthur Conan Doyle           4.02     207\nThe Time Machine                        H. G. Wells                  4.02     120\nWhite Fang                              Jack London                  4.01     237\nIsland                                  Aldous Huxley                4.00     295\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "KYoZ",
+      "code_hash": "8cf2396271bd453d0365fe3400f80ed0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "This week's pick for science fiction is 'The Case-Book of Sherlock Holmes' by Arthur Conan Doyle, rated 4.55 from 31 ratings, at 289 pages.\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "FJfX",
       "code_hash": "73fdb3e987fcbb67fc1f3f5d2b0bc464",
       "outputs": [
@@ -136,6 +281,39 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"6-how-i-know-these-numbers-are-right\">6. How I Know These Numbers Are Right</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZDLo",
+      "code_hash": "8ecb09a238b34bcb9db112ca8040cf86",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Author: Lewis Carroll\nnumFound from the API: 2682\nBooks collected by get_author_books: 2682\nMatch: True\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "RvzH",
+      "code_hash": "d98b77d48f1bf7991505969ac6fce38e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I checked <code>get_author_books</code> against the API directly, for one author (Isabel Allende). I asked the API for her <code>numFound</code>, the total number of her books it reports, without going through my function. Then I ran <code>get_author_books</code> on her and counted what it returned. Both numbers were 104, so my function collected every page and neither lost nor duplicated any books.</span></span>"
           }
         }
       ],
@@ -155,6 +333,19 @@
       "console": []
     },
     {
+      "id": "jfGp",
+      "code_hash": "c844dcdb6645e146ad18f027349a2566",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">To find the best-known authors in a genre, the agent\u2019s first idea was to use the authors list on Open Library\u2019s genre page (/subjects/magical_realism.json?details=true).</span>\n<span class=\"paragraph\">What I found: When I opened that reply in my browser, the top authors were Rohan Quine, Toshikazu Kawaguchi and Luis Ochoa Siguencia, and Gabriel Garc\u00eda M\u00e1rquez was not on the list at all. The number next to each author only counts how many of their books carry the \u201cmagical realism\u201d tag, not how well known they are.</span>\n<span class=\"paragraph\">What I changed: I didn\u2019t use that list. Instead, my tool takes the 10 most-edited books in the genre (the works list, which is ordered by number of editions) and keeps their authors, without repeating anyone. That gives Isabel Allende, Salman Rushdie and Laura Esquivel, which matches what I wanted: well-known authors.</span>\n<span class=\"paragraph\">How I knew: I compared the two lists in the raw reply in my browser. Where it is: my plan (commit mp2: plan before AI) and the function get_genre_authors in section 4.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "OTtn",
       "code_hash": "f4121d0189e0d8711e1fe878a69a1e04",
       "outputs": [
@@ -162,6 +353,45 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"8-reading-it-back\">8. Reading It Back</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ngwL",
+      "code_hash": "c379cdda76224fd76d6a8a0fee528dce",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong><code>get_genre_authors(genre, top_n)</code></strong></span>\n<span class=\"paragraph\">What goes in: a genre, as plain text (such as <code>\"magical realism\"</code>), and how many of the genre's most-edited books to look at.</span>\n<span class=\"paragraph\">What comes out: a list of authors, each one a dictionary with their name and their Open Library key, with no author repeated.</span>\n<span class=\"paragraph\">One line I had to ask about: <code>key = author[\"key\"].replace(\"/authors/\", \"\\\")</code>. The API returns an author's key wrapped in a path, like <code>\"/authors/OL228079A\"</code>, and every other request in this notebook needs just <code>\"OL228079A\"</code>, so this line strips the wrapping off.</span>\n<span class=\"paragraph\"><strong><code>get_author_books(author_key)</code></strong></span>\n<span class=\"paragraph\">What goes in: one author's key.</span>\n<span class=\"paragraph\">What comes out: a list of every book by that author the API knows about, each one a dictionary with its title, rating, number of ratings, and page count.</span>\n<span class=\"paragraph\">One line I had to ask about: <code>if len(books) &gt;= data[\"numFound\"]:</code>. The API sends an author's books 100 at a time, so this line checks, after each page, whether I already have every book the API reports (<code>numFound</code>). If not, the loop asks for the next page.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "EbQq",
+      "code_hash": "0340292ed08f5a6498737a30e7ed0f3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Prediction.</strong> I will change <code>genre</code> in section 3 from <code>\"magical realism\"</code> to <code>\"science fiction\"</code>. I expect the list of authors to change completely (different well-known names), and I expect the final pick in section 5 to be a different book, since it depends on which authors and books the new genre returns. I do not know in advance whether the new pick will have a higher or lower rating than <code>Haroun and the Sea of Stories</code> (4.30).</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xAHA",
+      "code_hash": "5dfbfa72938265b86c8c799a7fa39571",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">I changed <code>genre</code> to <code>\"science fiction\"</code> and ran the notebook again. As predicted, the list of authors changed completely \u2014 Arthur Conan Doyle, Aldous Huxley, Jack London, Lewis Carroll, H. G. Wells and L. Frank Baum replaced Isabel Allende, Salman Rushdie and the rest. The final pick changed too, from \"Haroun and the Sea of Stories\" (4.30) to \"The Case-Book of Sherlock Holmes\" by Arthur Conan Doyle (4.55) \u2014 a higher rating than before. One thing I did not predict: the notebook took much longer to run, about 7.5 minutes instead of a few seconds, because \"science fiction\" surfaced authors like Conan Doyle and Wells with hundreds of editions each, so <code>get_author_books</code> had to request many more pages from the API.</span></span>"
           }
         }
       ],
@@ -181,6 +411,26 @@
       "console": []
     },
     {
+      "id": "AzcA",
+      "code_hash": "30569ec3ef8d810e7a59dd93bcc0a7a8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Genre                 Title                              Author                  Rating   Pages\nmagical realism       Haroun and the Sea of Stories      Salman Rushdie            4.30     221\nscience fiction       Ozma of Oz                         L. Frank Baum             4.31     120\nhistorical fiction    Tom Sawyer, Detective              Mark Twain                4.18      92\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
       "id": "sgyB",
       "code_hash": "871cfd35a39007f3eae3497050e95168",
       "outputs": [
@@ -188,6 +438,19 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"10-time-spent\">10. Time Spent</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mxjm",
+      "code_hash": "b39e72e3ecebac322f692322d8515db9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">About 6 hours.</span></span>"
           }
         }
       ],
