@@ -200,19 +200,24 @@ def _(mo):
 
 
 @app.cell
-def _(towns_from_file):
-    county_counts = {}
+def _(ma_counties, pl, town_table):
+    conteo_propio = (
+        town_table.group_by("county")
+        .agg(pl.len().alias("towns"))
+        .sort("towns", descending=True)
+    )
+    conteo_servidor = pl.DataFrame(ma_counties)
+    conteo_propio, conteo_servidor
+    return
 
-    for town in towns_from_file:
-        value = int(town["average_single_family_value_dollars"])  # el campo que te dieron en el enunciado
-        if value >= 1_000_000:                                     # el umbral de million-dollar town
-            county = town["county"]                                # revisá: imprimí un town y fijate cómo se llama esa clave exacta
-            if county in county_counts:
-                county_counts[county] = county_counts[county] + 1   # sumale 1 a lo que ya tenía
-            else:
-                county_counts[county] = 1                           # el primero de ese condado
 
-    print(county_counts)
+@app.cell
+def _(pl, town_table):
+    (
+        town_table.filter(pl.col("population") > 50000)
+        .sort("average_single_family_bill_dollars", descending=True)
+        .head(5)
+    )
     return
 
 
@@ -333,6 +338,21 @@ def _(mo):
 
     **Going further.** Ask the towns a question of your own that needs `.filter()`, `.group_by()` and `.sort()` together.
     """)
+    return
+
+
+@app.cell
+def _(pl, town_table):
+    def _():
+        conteo_propio = (
+            town_table.group_by("county")
+            .agg(pl.len().alias("towns"))
+            .sort("towns", descending=True)
+        )
+        return conteo_propio
+
+
+    _()
     return
 
 
