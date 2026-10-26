@@ -66,16 +66,13 @@ def _(mo):
     return
 
 
+@app.function
+def add_tax(amount):
+    return round(amount * 1.0625, 2)
+
+
 @app.cell
 def _():
-    def add_tax(amount):
-        return round(amount * 1.0625, 2)
-
-    return (add_tax,)
-
-
-@app.cell
-def _(add_tax):
     add_tax(100)
     return
 
@@ -110,19 +107,16 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
-    def compute_cost(portfolio):
-        cost_so_far = 0
-        for symbol, shares, price in portfolio:
-            cost_so_far = cost_so_far + shares * price
-        return round(cost_so_far, 2)
-
-    return (compute_cost,)
+@app.function
+def compute_cost(portfolio):
+    cost_so_far = 0
+    for symbol, shares, price in portfolio:
+        cost_so_far = cost_so_far + shares * price
+    return round(cost_so_far, 2)
 
 
 @app.cell
-def _(holdings, compute_cost):
+def _(holdings):
     compute_cost(holdings)
     return
 
@@ -147,7 +141,7 @@ def _():
 
 
 @app.cell
-def _(compute_cost, retirement_holdings):
+def _(retirement_holdings):
     compute_cost(retirement_holdings)
     return
 
@@ -177,6 +171,34 @@ def _(mo):
     return
 
 
+@app.cell
+def _(holdings, retirement_holdings):
+    def count_shares(portfolio):
+        total_shares = 0
+        for symbol, shares, price in portfolio:
+            total_shares = total_shares + shares
+        return total_shares
+    count_shares(holdings)
+    count_shares(retirement_holdings)
+    return (count_shares,)
+
+
+@app.cell
+def _(holdings, retirement_holdings):
+    def find_largest(portfolio):
+        best_symbol = portfolio[0][0]
+        best_cost = portfolio[0][1] * portfolio[0][2]
+        for symbol, shares, price in portfolio:
+            cost = shares * price
+            if cost > best_cost:
+                best_symbol = symbol
+                best_cost = cost
+        return (best_symbol, round(best_cost, 2))
+    find_largest(holdings)
+    find_largest(retirement_holdings)
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -184,6 +206,12 @@ def _(mo):
 
     Copy `count_shares` into a new cell under a new name, and put `print(...)` where the `return` was. Call it and keep the result in a name. In a markdown cell under it, answer: what does that name hold, and what could the next cell do with it?
     """)
+    return
+
+
+@app.cell
+def _(count_shares, holdings):
+    count_shares(holdings)
     return
 
 
@@ -318,6 +346,42 @@ def _(mo):
     return
 
 
+@app.cell
+def _(requests):
+    _top_income_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={
+            "county": "Norfolk",
+            "sort": "income",
+            "order": "desc",
+            "per_page": 5,
+        },
+        timeout=10,
+    )
+    _top_income_towns = _top_income_reply.json()["items"]
+    for _town in _top_income_towns:
+        print(_town["name"], _town["income_per_capita_dollars"])
+    return
+
+
+@app.cell
+def _(requests):
+    top_income_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={
+            "county": "Norfolk",
+            "sort": "income",
+            "order": "desc",
+            "per_page": 5,
+        },
+        timeout=10,
+    )
+    top_income_towns = top_income_reply.json()["items"]
+    for _town in top_income_towns:
+        print(_town["name"], _town["income_per_capita_dollars"])
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -331,6 +395,68 @@ def _(mo):
 
     **Going further.** Write `town_history(name)`, which takes a town's name, makes both requests, and returns the history.
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    wellesley_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"name": "Wellesley"},
+        timeout=10,
+    )
+    wellesley_town = wellesley_reply.json()["items"][0]
+    wellesley_dor_code = wellesley_town["dor_code"]
+    wellesley_dor_code
+    return (wellesley_dor_code,)
+
+
+@app.cell
+def _(requests, wellesley_dor_code):
+    wellesley_history_reply = requests.get(
+        f"https://oim.zhili.dev/ma/towns/{wellesley_dor_code}/history",
+        params={"from_year": 2026, "to_year": 2026},
+        timeout=10,
+    )
+    wellesley_history = wellesley_history_reply.json()
+    wellesley_history
+    return (wellesley_history,)
+
+
+@app.cell
+def _(wellesley_history):
+    wellesley_2026 = wellesley_history["years"][0]
+    wellesley_value = wellesley_2026["average_single_family_value_dollars"]
+    wellesley_rate = wellesley_2026["residential_rate_per_thousand"]
+    calculated_bill = wellesley_value * wellesley_rate / 1000
+    calculated_bill, wellesley_2026["average_single_family_bill_dollars"]
+    return
+
+
+@app.cell
+def _(requests):
+    def town_history(name):
+        town_reply = requests.get(
+            "https://oim.zhili.dev/ma/towns",
+            params={"name": name},
+            timeout=10,
+        )
+        town = town_reply.json()["items"][0]
+        dor_code = town["dor_code"]
+
+        history_reply = requests.get(
+            f"https://oim.zhili.dev/ma/towns/{dor_code}/history",
+            timeout=10,
+        )
+        return history_reply.json()
+
+    town_history("Wellesley")
+    return
+
+
+@app.cell
+def _(wellesley_dor_code):
+    wellesley_dor_code  # → '317'
     return
 
 
@@ -415,6 +541,57 @@ def _(mo):
     return
 
 
+@app.cell
+def _(all_towns):
+    def _():
+        def _():
+            highest_bill_town = all_towns[0]
+            lowest_bill_town = all_towns[0]
+            for _town in all_towns:
+                if _town["average_single_family_bill_dollars"] > highest_bill_town["average_single_family_bill_dollars"]:
+                    highest_bill_town = _town
+                if _town["average_single_family_bill_dollars"] < lowest_bill_town["average_single_family_bill_dollars"]:
+                    lowest_bill_town = _town
+            return
+        return _()
+
+
+    _()
+    return
+
+
+@app.cell
+def _(get_page):
+    def get_all_towns():
+        first_page = get_page(1)
+        all_towns = first_page["items"]
+        pages = first_page["pagination"]["pages"]
+
+        for _page_number in range(2, pages + 1):
+            _page = get_page(_page_number)
+            all_towns = all_towns + _page["items"]
+
+        return all_towns
+
+    all_towns = get_all_towns()
+    len(all_towns), all_towns[0]["name"], all_towns[-1]["name"]
+    return (all_towns,)
+
+
+@app.cell
+def _(all_towns):
+    highest_bill_town = all_towns[0]
+    lowest_bill_town = all_towns[0]
+    for _town in all_towns:
+        if _town["average_single_family_bill_dollars"] > highest_bill_town["average_single_family_bill_dollars"]:
+            highest_bill_town = _town
+        if _town["average_single_family_bill_dollars"] < lowest_bill_town["average_single_family_bill_dollars"]:
+            lowest_bill_town = _town
+
+    highest_bill_town["name"], highest_bill_town["average_single_family_bill_dollars"], lowest_bill_town["name"], lowest_bill_town["average_single_family_bill_dollars"]
+    return
+
+
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
@@ -461,6 +638,32 @@ def _(mo):
 
     **Going further.** Post something more useful than one town's bill: choose a question somebody would ask, answer it from live data, and post the answer, in 140 characters or fewer.
     """)
+    return
+
+
+@app.cell
+def _(requests):
+    boston_reply = requests.get(
+        "https://oim.zhili.dev/ma/towns",
+        params={"name": "Boston"},
+        timeout=10,
+    )
+    boston_town = boston_reply.json()["items"][0]
+    town_name = boston_town["name"]
+    town_bill = boston_town["average_single_family_bill_dollars"]
+    town_name, town_bill
+    return town_bill, town_name
+
+
+@app.cell
+def _(requests, town_bill, town_name):
+    board_reply = requests.post(
+        "https://oim.zhili.dev/message",
+        headers={"x-token": "parmstrongbofill"},
+        json={"message": f"{town_name}: ${town_bill:,}"},
+        timeout=10,
+    )
+    board_reply.status_code, board_reply.json()
     return
 
 
