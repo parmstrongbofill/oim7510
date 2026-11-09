@@ -2,7 +2,7 @@
   "version": "1",
   "metadata": {
     "marimo_version": "0.25.2",
-    "script_metadata_hash": "32cb4bd2de03ee6ceb1146ca670cd9d4"
+    "script_metadata_hash": "b793726863555797dce845bb89a869ca"
   },
   "cells": [
     {
@@ -214,6 +214,65 @@
       "console": []
     },
     {
+      "id": "Artz",
+      "code_hash": "956400412d8e61668446c90835c719da",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "{'dor_code': '317', 'name': 'Wellesley', 'years': [{'fiscal_year': 1988, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7038, 'average_single_family_value_dollars': 361711, 'average_single_family_bill_dollars': 3129}, {'fiscal_year': 1989, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7044, 'average_single_family_value_dollars': 362255, 'average_single_family_bill_dollars': 3228}, {'fiscal_year': 1990, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7040, 'average_single_family_value_dollars': 363533, 'average_single_family_bill_dollars': 3319}, {'fiscal_year': 1991, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7071, 'average_single_family_value_dollars': 366019, 'average_single_family_bill_dollars': 3503}, {'fiscal_year': 1992, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7101, 'average_single_family_value_dollars': 337596, 'average_single_family_bill_dollars': 3676}, {'fiscal_year': 1993, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7107, 'average_single_family_value_dollars': 341320, 'average_single_family_bill_dollars': 3908}, {'fiscal_year': 1994, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7122, 'average_single_family_value_dollars': 363778, 'average_single_family_bill_dollars': 4078}, {'fiscal_year': 1995, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7146, 'average_single_family_value_dollars': 368553, 'average_single_family_bill_dollars': 4224}, {'fiscal_year': 1996, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7173, 'average_single_family_value_dollars': 372530, 'average_single_family_bill_dollars': 4325}, {'fiscal_year': 1997, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7186, 'average_single_family_value_dollars': 453699, 'average_single_family_bill_dollars': 4555}, {'fiscal_year': 1998, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7201, 'average_single_family_value_dollars': 469674, 'average_single_family_bill_dollars': 4711}, {'fiscal_year': 1999, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7204, 'average_single_family_value_dollars': 493530, 'average_single_family_bill_dollars': 4866}, {'fiscal_year': 2000, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7206, 'average_single_family_value_dollars': 535170, 'average_single_family_bill_dollars': 5084}, {'fiscal_year': 2001, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7202, 'average_single_family_value_dollars': 607567, 'average_single_family_bill_dollars': 5377}, {'fiscal_year': 2002, 'residential_rate_per_thousand': None, 'commercial_rate_per_thousand': None, 'single_family_parcels': 7211, 'average_single_family_value_dollars': 735690, 'average_single_family_bill_dollars': 5959}, {'fiscal_year': 2003, 'residential_rate_per_thousand': 8.12, 'commercial_rate_per_thousand': 8.12, 'single_family_parcels': 7220, 'average_single_family_value_dollars': 817980, 'average_single_family_bill_dollars': 6642}, {'fiscal_year': 2004, 'residential_rate_per_thousand': 8.56, 'commercial_rate_per_thousand': 8.56, 'single_family_parcels': 7226, 'average_single_family_value_dollars': 855156, 'average_single_family_bill_dollars': 7320}, {'fiscal_year': 2005, 'residential_rate_per_thousand': 8.4, 'commercial_rate_per_thousand': 8.4, 'single_family_parcels': 7231, 'average_single_family_value_dollars': 900444, 'average_single_family_bill_dollars': 7564}, {'fiscal_year': 2006, 'residential_rate_per_thousand': 8.32, 'commercial_rate_per_thousand': 8.32, 'single_family_parcels': 7237, 'average_single_family_value_dollars': 987191, 'average_single_family_bill_dollars': 8213}, {'fiscal_year': 2007, 'residential_rate_per_thousand': 8.87, 'commercial_rate_per_thousand': 8.87, 'single_family_parcels': 7254, 'average_single_family_value_dollars': 1010371, 'average_single_family_bill_dollars': 8962}, {'fiscal_year': 2008, 'residential_rate_per_thousand': 9.18, 'commercial_rate_per_thousand': 9.18, 'single_family_parcels': 7264, 'average_single_family_value_dollars': 1024538, 'average_single_family_bill_dollars': 9405}, {'fiscal_year': 2009, 'residential_rate_per_thousand': 9.47, 'commercial_rate_per_thousand': 9.47, 'single_family_parcels': 7266, 'average_single_family_value_dollars': 1046131, 'average_single_family_bill_dollars': 9907}, {'fiscal_year': 2010, 'residential_rate_per_thousand': 10.48, 'commercial_rate_per_thousand': 10.48, 'single_family_parcels': 7283, 'average_single_family_value_dollars': 1009640, 'average_single_family_bill_dollars': 10581}, {'fiscal_year': 2011, 'residential_rate_per_thousand': 11.43, 'commercial_rate_per_thousand': 11.43, 'single_family_parcels': 7285, 'average_single_family_value_dollars': 986935, 'average_single_family_bill_dollars': 11281}, {'fiscal_year': 2012, 'residential_rate_per_thousand': 11.48, 'commercial_rate_per_thousand': 11.48, 'single_family_parcels': 7282, 'average_single_family_value_dollars': 1033118, 'average_single_family_bill_dollars': 11860}, {'fiscal_year': 2013, 'residential_rate_per_thousand': 11.7, 'commercial_rate_per_thousand': 11.7, 'single_family_parcels': 7291, 'average_single_family_value_dollars': 1042604, 'average_single_family_bill_dollars': 12198}, {'fiscal_year': 2014, 'residential_rate_per_thousand': 11.54, 'commercial_rate_per_thousand': 11.54, 'single_family_parcels': 7286, 'average_single_family_value_dollars': 1080522, 'average_single_family_bill_dollars': 12469}, {'fiscal_year': 2015, 'residential_rate_per_thousand': 11.56, 'commercial_rate_per_thousand': 11.56, 'single_family_parcels': 7297, 'average_single_family_value_dollars': 1152734, 'average_single_family_bill_dollars': 13326}, {'fiscal_year': 2016, 'residential_rate_per_thousand': 11.83, 'commercial_rate_per_thousand': 11.83, 'single_family_parcels': 7298, 'average_single_family_value_dollars': 1180996, 'average_single_family_bill_dollars': 13971}, {'fiscal_year': 2017, 'residential_rate_per_thousand': 11.79, 'commercial_rate_per_thousand': 11.79, 'single_family_parcels': 7301, 'average_single_family_value_dollars': 1215729, 'average_single_family_bill_dollars': 14333}, {'fiscal_year': 2018, 'residential_rate_per_thousand': 11.95, 'commercial_rate_per_thousand': 11.95, 'single_family_parcels': 7297, 'average_single_family_value_dollars': 1241758, 'average_single_family_bill_dollars': 14839}, {'fiscal_year': 2019, 'residential_rate_per_thousand': 11.57, 'commercial_rate_per_thousand': 11.57, 'single_family_parcels': 7301, 'average_single_family_value_dollars': 1331551, 'average_single_family_bill_dollars': 15406}, {'fiscal_year': 2020, 'residential_rate_per_thousand': 11.56, 'commercial_rate_per_thousand': 11.56, 'single_family_parcels': 7298, 'average_single_family_value_dollars': 1363364, 'average_single_family_bill_dollars': 15760}, {'fiscal_year': 2021, 'residential_rate_per_thousand': 11.75, 'commercial_rate_per_thousand': 11.75, 'single_family_parcels': 7302, 'average_single_family_value_dollars': 1385851, 'average_single_family_bill_dollars': 16284}, {'fiscal_year': 2022, 'residential_rate_per_thousand': 11.68, 'commercial_rate_per_thousand': 11.68, 'single_family_parcels': 7297, 'average_single_family_value_dollars': 1445944, 'average_single_family_bill_dollars': 16889}, {'fiscal_year': 2023, 'residential_rate_per_thousand': 11.45, 'commercial_rate_per_thousand': 11.45, 'single_family_parcels': 7306, 'average_single_family_value_dollars': 1579667, 'average_single_family_bill_dollars': 18087}, {'fiscal_year': 2024, 'residential_rate_per_thousand': 10.41, 'commercial_rate_per_thousand': 10.41, 'single_family_parcels': 7314, 'average_single_family_value_dollars': 1795371, 'average_single_family_bill_dollars': 18690}, {'fiscal_year': 2025, 'residential_rate_per_thousand': 10.28, 'commercial_rate_per_thousand': 10.28, 'single_family_parcels': 7315, 'average_single_family_value_dollars': 1925282, 'average_single_family_bill_dollars': 19792}, {'fiscal_year': 2026, 'residential_rate_per_thousand': 10.17, 'commercial_rate_per_thousand': 10.17, 'single_family_parcels': 7319, 'average_single_family_value_dollars': 2020758, 'average_single_family_bill_dollars': 20551}]}\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "eQUk",
+      "code_hash": "ef3c89efdb1fe561a6ed2811a1bc3624",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='eQUk-0' random-id='fa5c15a1-d774-c0d0-f623-59b149e69e57'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;town&#92;&quot;:&#92;&quot;Wellesley&#92;&quot;,&#92;&quot;year&#92;&quot;:2008,&#92;&quot;avg_single_family_bill&#92;&quot;:8794},{&#92;&quot;town&#92;&quot;:&#92;&quot;Wellesley&#92;&quot;,&#92;&quot;year&#92;&quot;:2003,&#92;&quot;avg_single_family_bill&#92;&quot;:6017}]&quot;' data-total-rows='2' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;town&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;year&quot;,[&quot;integer&quot;,&quot;i32&quot;]],[&quot;avg_single_family_bill&quot;,[&quot;integer&quot;,&quot;i32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "QXrz",
+      "code_hash": "a84b48bd30c1158f4caca6ac61361103",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "sql-error",
+          "evalue": "Constraint Error: Duplicate key \"town: Wellesley, year: 2003\" violates primary key constraint.",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "XYkY",
+      "code_hash": "801e0341fc4f70c0378f9ee17666fae2",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "sql-error",
+          "evalue": "Constraint Error: Violates foreign key constraint because key \"name: Narnia\" does not exist in the referenced table",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "Hstk",
       "code_hash": "b0f36f16b7d5623c0deaf313ce8cb8e7",
       "outputs": [
@@ -253,6 +312,45 @@
       "console": []
     },
     {
+      "id": "hroe",
+      "code_hash": "3fbe3df0ce75296b09c318f95b86bf3b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Constraint Error: Duplicate key &quot;name: Wellesley&quot; violates primary key constraint.&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "itsV",
+      "code_hash": "2aaf9c7866d5a8dd2bd5e8057f5710ce",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Constraint Error: CHECK constraint failed on table &quot;towns&quot; with expression CHECK((population &gt; 0))&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UxPW",
+      "code_hash": "836eae9dd51ab088208f40dad1489e22",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Constraint Error: Violates foreign key constraint because key &quot;name: Atlantis&quot; does not exist in the referenced table&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "ZHCJ",
       "code_hash": "1a7c4018335d6cb069c0c7ca66b973af",
       "outputs": [
@@ -268,7 +366,14 @@
     {
       "id": "ROlb",
       "code_hash": "e322948be7e2a30bd9bad072b58b2ae9",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='ROlb-0' random-id='0c5e2794-e64a-c20c-bdab-7ad10a986bdb'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Brookline&#92;&quot;,&#92;&quot;population&#92;&quot;:63925,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:26237},{&#92;&quot;name&#92;&quot;:&#92;&quot;Wellesley&#92;&quot;,&#92;&quot;population&#92;&quot;:31242,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:20551},{&#92;&quot;name&#92;&quot;:&#92;&quot;Dover&#92;&quot;,&#92;&quot;population&#92;&quot;:6057,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:19088},{&#92;&quot;name&#92;&quot;:&#92;&quot;Cohasset&#92;&quot;,&#92;&quot;population&#92;&quot;:8532,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:16814},{&#92;&quot;name&#92;&quot;:&#92;&quot;Needham&#92;&quot;,&#92;&quot;population&#92;&quot;:32931,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:16690}]&quot;' data-total-rows='5' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i32&quot;]],[&quot;average_single_family_bill_dollars&quot;,[&quot;integer&quot;,&quot;i32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -279,6 +384,19 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"c-an-answer-you-already-know\">\u270f\ufe0f C \u00b7 An Answer You Already Know</h2>\n<span class=\"paragraph\">In notebook 5, exercise B found the five towns of more than 50,000 people with the highest average bill, in polars. Ask the database the same question.</span>\n<span class=\"paragraph\"><em>Check yourself: Brookline, Newton, Cambridge, Somerville, Quincy.</em></span>\n<span class=\"paragraph\"><strong>Going further.</strong> Ask the same question of <code>counties</code> and <code>towns</code> together: which county is each of those five in, and what share of its county's people does each hold? That needs both tables at once, which the topic slides call a join.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ghmd",
+      "code_hash": "b3b18d9e642a5dbbfb3417b17b9c4909",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='ghmd-0' random-id='569747ad-175c-5ba9-b63b-dc047afc6079'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Brookline&#92;&quot;,&#92;&quot;population&#92;&quot;:63925,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:26237},{&#92;&quot;name&#92;&quot;:&#92;&quot;Newton&#92;&quot;,&#92;&quot;population&#92;&quot;:90700,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:17077},{&#92;&quot;name&#92;&quot;:&#92;&quot;Cambridge&#92;&quot;,&#92;&quot;population&#92;&quot;:121186,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:14678},{&#92;&quot;name&#92;&quot;:&#92;&quot;Somerville&#92;&quot;,&#92;&quot;population&#92;&quot;:82149,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:9376},{&#92;&quot;name&#92;&quot;:&#92;&quot;Quincy&#92;&quot;,&#92;&quot;population&#92;&quot;:103434,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:8250}]&quot;' data-total-rows='5' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i32&quot;]],[&quot;average_single_family_bill_dollars&quot;,[&quot;integer&quot;,&quot;i32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],
@@ -300,7 +418,14 @@
     {
       "id": "Vxnm",
       "code_hash": "3c646d2de1df110536de16ea37161658",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Vxnm-0' random-id='8950ba31-f92a-a7ae-8678-fd77bb6b6396'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:26},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:13},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:12},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;towns&#92;&quot;:5},{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;towns&#92;&quot;:5},{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;towns&#92;&quot;:2},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;towns&#92;&quot;:1},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;towns&#92;&quot;:1}]&quot;' data-total-rows='8' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -319,7 +444,14 @@
     {
       "id": "ulZA",
       "code_hash": "cd2a7c8908f4b4d3a326b3d562608cd1",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='ulZA-0' random-id='d3518c29-be7c-8327-c39a-e6f580cc940b'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;towns&#92;&quot;:26},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;towns&#92;&quot;:13},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;towns&#92;&quot;:12}]&quot;' data-total-rows='3' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -330,6 +462,45 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"d-a-count-you-can-check\">\u270f\ufe0f D \u00b7 A Count You Can Check</h2>\n<ol>\n<li>Count the towns in each county with <code>GROUP BY</code>, and compare each count with the <code>towns</code> column of <code>counties</code>. <em>Check yourself: Worcester 60, Middlesex 54, Essex 34, and all 14 agree.</em></li>\n<li>Add the counts up. Write in a markdown cell why the sum has to equal the number of rows in <code>towns</code>. <em>Check yourself: 351.</em></li>\n<li>For each county, the total population of its towns, and the share of those people living in towns with a bill over $10,000. Use <code>sum()</code> and a <code>CASE WHEN</code> inside it, or two queries. <em>Check yourself: the totals add up to 7,136,171.</em></li>\n</ol>\n<span class=\"paragraph\"><strong>Going further.</strong> Answer one question of your own about the towns with <code>GROUP BY</code>, and check it in polars on <code>town_rows</code>. Or download the TV show database from <a href=\"https://oim7510.github.io/downloads/\" rel=\"noopener noreferrer\" target=\"_blank\">Downloads</a>, keep it out of your repository, and answer the two TV show questions from the topic slides.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "IbHR",
+      "code_hash": "b90f68825d63f1384afe5222fecd51c7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='IbHR-0' random-id='420984c3-b55c-7047-8121-abc7d7926119'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;column_name&#92;&quot;:&#92;&quot;name&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;VARCHAR&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;NO&#92;&quot;,&#92;&quot;key&#92;&quot;:&#92;&quot;PRI&#92;&quot;,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;fips_code&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;VARCHAR&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;NO&#92;&quot;,&#92;&quot;key&#92;&quot;:&#92;&quot;UNI&#92;&quot;,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;towns&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;NO&#92;&quot;,&#92;&quot;key&#92;&quot;:null,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;population&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;NO&#92;&quot;,&#92;&quot;key&#92;&quot;:null,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;founded_year&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;NO&#92;&quot;,&#92;&quot;key&#92;&quot;:null,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;government_abolished_year&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;YES&#92;&quot;,&#92;&quot;key&#92;&quot;:null,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null}]&quot;' data-total-rows='6' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;column_name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;column_type&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;null&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;key&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;default&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;extra&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LKLw",
+      "code_hash": "40ec5e90bff6fd6e0e7bd016c6689aa7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='LKLw-0' random-id='179b1c72-892e-312e-7e90-0f25beee8028'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:60,&#92;&quot;expected_towns&#92;&quot;:60},{&#92;&quot;county&#92;&quot;:&#92;&quot;Middlesex&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:54,&#92;&quot;expected_towns&#92;&quot;:54},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:34,&#92;&quot;expected_towns&#92;&quot;:34},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:32,&#92;&quot;expected_towns&#92;&quot;:32},{&#92;&quot;county&#92;&quot;:&#92;&quot;Norfolk&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:28,&#92;&quot;expected_towns&#92;&quot;:28},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:27,&#92;&quot;expected_towns&#92;&quot;:27},{&#92;&quot;county&#92;&quot;:&#92;&quot;Franklin&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:26,&#92;&quot;expected_towns&#92;&quot;:26},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:23,&#92;&quot;expected_towns&#92;&quot;:23},{&#92;&quot;county&#92;&quot;:&#92;&quot;Bristol&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:20,&#92;&quot;expected_towns&#92;&quot;:20},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;,&#92;&quot;actual_towns&#92;&quot;:20,&#92;&quot;expected_towns&#92;&quot;:20}]&quot;' data-total-rows='14' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;actual_towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;expected_towns&quot;,[&quot;integer&quot;,&quot;i32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "sMSu",
+      "code_hash": "6f4e5224825eca725df8f7e3df6063ac",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Every town belongs to exactly one county, so GROUP BY county puts each of the 351 rows into exactly one group. Adding up the per-county counts just adds up those same 351 rows once each \u2014 so the sum has to equal count(*) on the whole towns table.</span></span>"
           }
         }
       ],
@@ -368,6 +539,32 @@
       "console": []
     },
     {
+      "id": "BNgE",
+      "code_hash": "b610622bab8033dfca8b796128a018bb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='BNgE-0' random-id='408acc98-7e26-5257-1c12-6c417a080801'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;county&#92;&quot;:&#92;&quot;Dukes&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;21061&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.25535349698494847},{&#92;&quot;county&#92;&quot;:&#92;&quot;Worcester&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;881248&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.07023221612985221},{&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;232570&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.016033882272004127},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampden&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;464151&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.033851052782391935},{&#92;&quot;county&#92;&quot;:&#92;&quot;Hampshire&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;165399&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Nantucket&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;14670&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Plymouth&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;542090&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.1600343116456677},{&#92;&quot;county&#92;&quot;:&#92;&quot;Berkshire&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;128726&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Bristol&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;588593&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.0},{&#92;&quot;county&#92;&quot;:&#92;&quot;Essex&#92;&quot;,&#92;&quot;total_population&#92;&quot;:&#92;&quot;823938&#92;&quot;,&#92;&quot;share_high_bill&#92;&quot;:0.19524163225873792}]&quot;' data-total-rows='14' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;total_population&quot;,[&quot;number&quot;,&quot;decimal[38,0]&quot;]],[&quot;share_high_bill&quot;,[&quot;number&quot;,&quot;f64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CRSs",
+      "code_hash": "fb5da2cfeb29b4fb3700bbaca795cdc4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='CRSs-0' random-id='c6c15e64-20e0-f10f-7cd8-d51be975e9e1'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;total&#92;&quot;:&#92;&quot;7136171&#92;&quot;}]&quot;' data-total-rows='1' data-total-columns='1' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;total&quot;,[&quot;number&quot;,&quot;decimal[38,0]&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "nHfw",
       "code_hash": "9515b9e216d9b7f586517edd61034cda",
       "outputs": [
@@ -383,7 +580,14 @@
     {
       "id": "xXTn",
       "code_hash": "4bf85498e810420ebb569c0797c110e8",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='xXTn-0' random-id='0914ee92-c774-061c-a7ff-da951a7ad662'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;orders&#92;&quot;:16282}]&quot;' data-total-rows='1' data-total-columns='1' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;orders&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -394,6 +598,32 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>How many different countries did Northwind ship orders to? Use the column <code>ShipCountry</code>. <em>Check yourself: 21.</em></li>\n<li>For each country, the number of orders and the total of <code>Freight</code>, the most freight first. <em>Check yourself: USA with 2,328 orders and 573,251 in freight, then Germany with 2,193 and 537,189.75, then France with 1,778 and 442,055.75.</em></li>\n</ol>\n<span class=\"paragraph\"><strong>Going further.</strong> Rank the countries by freight per order instead, and see which countries move.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "JRvk",
+      "code_hash": "e06b0caf528b62ffd711126614e7ce3c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='JRvk-0' random-id='935d3641-1814-69ba-680c-e7cf110fd990'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;countries&#92;&quot;:21}]&quot;' data-total-rows='1' data-total-columns='1' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;countries&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wJOj",
+      "code_hash": "c27569c0839948d73cd1a355dece7b09",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='wJOj-0' random-id='efebece7-ec1b-22dd-795d-52f19380ec14'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;USA&#92;&quot;,&#92;&quot;orders&#92;&quot;:2328,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;573251.0000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Germany&#92;&quot;,&#92;&quot;orders&#92;&quot;:2193,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;537189.7500&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;France&#92;&quot;,&#92;&quot;orders&#92;&quot;:1778,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;442055.7500&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Brazil&#92;&quot;,&#92;&quot;orders&#92;&quot;:1683,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;418464.5000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;UK&#92;&quot;,&#92;&quot;orders&#92;&quot;:1280,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;326250.0000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Mexico&#92;&quot;,&#92;&quot;orders&#92;&quot;:899,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;228138.7500&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Venezuela&#92;&quot;,&#92;&quot;orders&#92;&quot;:707,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;174448.5000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Spain&#92;&quot;,&#92;&quot;orders&#92;&quot;:691,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;172833.0000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Argentina&#92;&quot;,&#92;&quot;orders&#92;&quot;:535,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;140088.5000&#92;&quot;},{&#92;&quot;ShipCountry&#92;&quot;:&#92;&quot;Canada&#92;&quot;,&#92;&quot;orders&#92;&quot;:547,&#92;&quot;total_freight&#92;&quot;:&#92;&quot;132277.0000&#92;&quot;}]&quot;' data-total-rows='21' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;ShipCountry&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;orders&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;total_freight&quot;,[&quot;number&quot;,&quot;decimal[38,4]&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
           }
         }
       ],
