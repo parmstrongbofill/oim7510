@@ -1,0 +1,429 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.25.2",
+    "script_metadata_hash": "32cb4bd2de03ee6ceb1146ca670cd9d4"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "c6de88cc133a5aa67a40781ff6fefcef",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "40c1013506ea14fe182cc98207c4f366",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"building-and-querying-a-database\">Building and Querying a Database</h1>\n<span class=\"paragraph\">In this notebook you turn the design from the topic slides into a database: two tables with declared keys, filled from the towns file you saved in notebook 5. Then you ask it questions, the first few of them ones you already know the answer to.</span>\n<table>\n<thead>\n<tr>\n<th></th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>\u270f\ufe0f</td>\n<td>Your turn. Add cells with the <strong>+</strong> button</td>\n</tr>\n<tr>\n<td>\ud83d\ude80</td>\n<td>This week's work</td>\n</tr>\n</tbody>\n</table>\n<span class=\"paragraph\">For a written answer, add a cell under the question, open the cell's <strong>\u22ef</strong> menu and choose <strong>Convert to Markdown</strong>.</span>\n<span class=\"paragraph\">Every \u270f\ufe0f is part of this week's work. The <strong>Going further</strong> at the end of an exercise is optional; try it once the rest is done.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "d88b427449d47205ddbbf927b2edffaa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Work with your agent the same way as in notebook 5.</strong> Try it yourself first, or write the steps in words. Then ask your agent, ask it to explain any line you could not have written, and ask which concepts its answer used. Do exercise A by hand.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "31415cc755f2a952ff977f42293d20b0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"1-from-the-diagram-to-tables\">1. From the Diagram to Tables</h1>\n<span class=\"paragraph\">The topic slides split the towns file into two tables, <code>counties</code> and <code>towns</code>, joined by the county's name. This section builds them.</span>\n<span class=\"paragraph\"><strong>The data.</strong> The counties come from the course API, and the towns from <code>data/ma-towns.csv</code>, the file notebook 5 saved. If that file is not there, the cell fetches the towns again.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "ba7d16042cfe1ed3b9f206dbe9a4c197",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[[14, 7], [351, 5]]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "fae582c22efd0eb1a96985395a615de8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>The database is a file</strong>, <code>data/ma-towns.duckdb</code>. It keeps the tables after this notebook stops, and any program that can read DuckDB can open it.</span>\n<span class=\"paragraph\">Before you run the next cell, open <code>.gitignore</code> in the root folder of your repository and add this line, then commit it:</span>\n<div class=\"language-scdoc codehilite\"><pre><span></span><code>*.duckdb*\n</code></pre></div>\n<span class=\"paragraph\">This notebook rebuilds the database from the data every time it runs, so the file itself does not belong in your repository.</span>\n<span class=\"paragraph\"><strong>One cell builds it.</strong> It deletes the old file, opens a new one, creates the tables and loads them, and closes the file when the <code>with</code> block ends. Read the two <code>CREATE TABLE</code> statements against the diagram:</span>\n<ul>\n<li><code>name</code> is the <strong>primary key</strong> of each table. A county's name or a town's name names exactly one row, and the database refuses a second row with the same name.</li>\n<li><code>county</code> in <code>towns</code> is a <strong>foreign key</strong>. <code>REFERENCES counties(name)</code> makes the database refuse a town whose county is not in <code>counties</code>, so <code>counties</code> has to be filled first. This rule is called <strong>referential integrity</strong>.</li>\n<li><code>NOT NULL</code> and <code>CHECK</code> are rules about one column. A population has to be there and has to be more than zero.</li>\n<li><code>fips_code</code> is <code>UNIQUE</code>: it is not the key, and still no two counties can share one.</li>\n<li><code>government_abolished_year</code> has no <code>NOT NULL</code>. For the six counties that still have a county government, the year is empty, and that is a real answer.</li>\n</ul>\n<span class=\"paragraph\">The last statement, <code>CREATE VIEW</code>, saves a query for later. Section 5 explains it.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "55d644823a370ab76dabdf27b3c501f4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;ma-towns.duckdb&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "992a8e4704454d72d0f8fdf103ee843f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Every other cell asks through <code>ask</code>.</strong> It opens the file only to read, runs one query, hands back the result as a table, and closes the file again. Nothing keeps the database open, so you can rebuild it at any time. Your database project's notebooks use the same function.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "1ce0170991256257cf40825a5e64a19b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "301e26caf4aa2cbe68069e0d7af39833",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Kclp-0' random-id='f4a442f3-a8f4-4619-50ad-ddae1fcffbe9'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;counties&#92;&quot;:14,&#92;&quot;towns&#92;&quot;:351}]&quot;' data-total-rows='1' data-total-columns='2' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;counties&quot;,[&quot;integer&quot;,&quot;i64&quot;]],[&quot;towns&quot;,[&quot;integer&quot;,&quot;i64&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "JMOy",
+      "code_hash": "ecfe9bad80b70f682a8f2822184a63d2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='JMOy-0' random-id='52e56ed1-ac47-69dd-02c9-3ba1a47ffbc5'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;county&#92;&quot;:&#92;&quot;Barnstable&#92;&quot;,&#92;&quot;population&#92;&quot;:49831,&#92;&quot;income_per_capita_dollars&#92;&quot;:52832,&#92;&quot;average_single_family_bill_dollars&#92;&quot;:5599}]&quot;' data-total-rows='1' data-total-columns='5' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;county&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;population&quot;,[&quot;integer&quot;,&quot;i32&quot;]],[&quot;income_per_capita_dollars&quot;,[&quot;integer&quot;,&quot;i32&quot;]],[&quot;average_single_family_bill_dollars&quot;,[&quot;integer&quot;,&quot;i32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Mrwi",
+      "code_hash": "e6dd875ed0488238dbd86eca33601757",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Mrwi-0' random-id='23034724-e486-a5a1-1c79-bb4054121888'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;column_name&#92;&quot;:&#92;&quot;name&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;VARCHAR&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;NO&#92;&quot;,&#92;&quot;key&#92;&quot;:&#92;&quot;PRI&#92;&quot;,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;county&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;VARCHAR&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;NO&#92;&quot;,&#92;&quot;key&#92;&quot;:null,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;population&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;NO&#92;&quot;,&#92;&quot;key&#92;&quot;:null,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;income_per_capita_dollars&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;YES&#92;&quot;,&#92;&quot;key&#92;&quot;:null,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null},{&#92;&quot;column_name&#92;&quot;:&#92;&quot;average_single_family_bill_dollars&#92;&quot;,&#92;&quot;column_type&#92;&quot;:&#92;&quot;INTEGER&#92;&quot;,&#92;&quot;null&#92;&quot;:&#92;&quot;YES&#92;&quot;,&#92;&quot;key&#92;&quot;:null,&#92;&quot;default&#92;&quot;:null,&#92;&quot;extra&#92;&quot;:null}]&quot;' data-total-rows='5' data-total-columns='6' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;column_name&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;column_type&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;null&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;key&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;default&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;extra&quot;,[&quot;string&quot;,&quot;str&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "e05678a755e50c6716f858730b78b84c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"a-a-table-of-your-own\">\u270f\ufe0f A \u00b7 A Table of Your Own</h2>\n<span class=\"paragraph\"><strong>No agent for this one</strong>, and no code completion either. When the editor suggests code in grey as you type, press <code>Esc</code> and keep typing your own.</span>\n<span class=\"paragraph\">The course API keeps each town's figures for every year. Open <a href=\"https://oim.zhili.dev/ma/towns/317/history\" rel=\"noopener noreferrer\" target=\"_blank\">oim.zhili.dev/ma/towns/317/history</a>, Wellesley's, in your browser and read what comes back.</span>\n<ol>\n<li>Write a <code>CREATE TABLE</code> for a table <code>town_bills</code>: one row for one town in one fiscal year, with the town's name, the year and the average single-family bill. Make the town's name a foreign key to <code>towns</code>.</li>\n<li>Choose the primary key, which takes two columns. A key of two columns goes on a line of its own at the end of the table, in the form <code>PRIMARY KEY (order_id, product_id)</code>.</li>\n<li>Insert two of Wellesley's years by hand.</li>\n<li>Run all of it inside <code>with duckdb.connect(database) as _con:</code>, in a cell of its own, after the cell that builds the database.</li>\n</ol>\n<span class=\"paragraph\"><em>Check yourself: inserting the same town and year a second time is refused with <code>Duplicate key</code>, and a town that is not in <code>towns</code> is refused with <code>foreign key</code>.</em></span>\n<span class=\"paragraph\"><strong>Going further.</strong> Load every year for one county's towns from the API, and find the town whose bill grew the most over 10 years.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bMfd",
+      "code_hash": "848ff5312d3a16c028c01b6162394b74",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xmWO",
+      "code_hash": "bf3167c0dce13cee0450979a7ad38b9b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='xmWO-0' random-id='b1981b94-3120-042e-d789-9b421b77059e'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;town&#92;&quot;:&#92;&quot;Wellesley&#92;&quot;,&#92;&quot;year&#92;&quot;:2003,&#92;&quot;avg_single_family_bill&#92;&quot;:6017},{&#92;&quot;town&#92;&quot;:&#92;&quot;Wellesley&#92;&quot;,&#92;&quot;year&#92;&quot;:2008,&#92;&quot;avg_single_family_bill&#92;&quot;:8794}]&quot;' data-total-rows='2' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='false' data-page-size='10' data-field-types='[[&quot;town&quot;,[&quot;string&quot;,&quot;str&quot;]],[&quot;year&quot;,[&quot;integer&quot;,&quot;i32&quot;]],[&quot;avg_single_family_bill&quot;,[&quot;integer&quot;,&quot;i32&quot;]]]' data-show-filters='true' data-show-download='true' data-show-search='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-hidden-columns='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "b0f36f16b7d5623c0deaf313ce8cb8e7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"2-what-the-database-refuses\">2. What the Database Refuses</h1>\n<span class=\"paragraph\">A constraint checks every row that arrives, without anybody remembering to. Here is a town in a county that does not exist. <code>try</code> and <code>except</code> catch the refusal, so the rest of the notebook keeps running, and the cell shows the message.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "31b661e637bceeb0e383d67fabd83f54",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre class='text-xs'>&#x27;Constraint Error: Violates foreign key constraint because key &quot;name: Atlantis&quot; does not exist in the referenced table&#x27;</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "985ad6c044394d96f0dec49777b1136b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"b-breaking-the-rules\">\u270f\ufe0f B \u00b7 Breaking the Rules</h2>\n<span class=\"paragraph\">Write three inserts into <code>towns</code>, each breaking a different rule: a name that is already there, a population of zero, and a county that does not exist. Show the message each one gets.</span>\n<span class=\"paragraph\"><em>Check yourself: the three messages contain <code>Duplicate key</code>, <code>CHECK constraint failed</code> and <code>foreign key</code>.</em></span>\n<span class=\"paragraph\"><strong>Going further.</strong> Find a rule the scenario of your database project states that a constraint cannot hold, and write the query that checks it instead.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "1a7c4018335d6cb069c0c7ca66b973af",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"3-asking-one-table\">3. Asking One Table</h1>\n<span class=\"paragraph\"><code>SELECT</code> names the columns, <code>FROM</code> the table, <code>WHERE</code> keeps the rows that pass a condition, <code>ORDER BY</code> sorts and <code>LIMIT</code> cuts the list short. Read it as a sentence: the towns in Norfolk County, the highest bill first.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "e322948be7e2a30bd9bad072b58b2ae9",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "d7ab3bfb612d5a47767718c6ed30ad0e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"c-an-answer-you-already-know\">\u270f\ufe0f C \u00b7 An Answer You Already Know</h2>\n<span class=\"paragraph\">In notebook 5, exercise B found the five towns of more than 50,000 people with the highest average bill, in polars. Ask the database the same question.</span>\n<span class=\"paragraph\"><em>Check yourself: Brookline, Newton, Cambridge, Somerville, Quincy.</em></span>\n<span class=\"paragraph\"><strong>Going further.</strong> Ask the same question of <code>counties</code> and <code>towns</code> together: which county is each of those five in, and what share of its county's people does each hold? That needs both tables at once, which the topic slides call a join.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "19905b2ac849960732f5993a6eb355d2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"4-group-by\">4. <code>GROUP BY</code></h1>\n<span class=\"paragraph\">Notebook 5 counted the million-dollar towns in each county in polars, with <code>.filter()</code>, <code>.group_by()</code> and <code>.agg()</code>. The same kind of question in SQL asks how many towns in each county have an average bill over $10,000. <code>WHERE</code> is the filter, <code>GROUP BY</code> makes one group per county, and <code>count(*)</code> counts the rows in each.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "3c646d2de1df110536de16ea37161658",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "e6d98347e93a30a396d5dc513dd136ce",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><code>WHERE</code> keeps rows before they are grouped. To keep <strong>groups</strong> after they are counted, use <code>HAVING</code>: the counties with more than five such towns.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "cd2a7c8908f4b4d3a326b3d562608cd1",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "a965a75acaf0ec53a54a78f3ebec6470",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"d-a-count-you-can-check\">\u270f\ufe0f D \u00b7 A Count You Can Check</h2>\n<ol>\n<li>Count the towns in each county with <code>GROUP BY</code>, and compare each count with the <code>towns</code> column of <code>counties</code>. <em>Check yourself: Worcester 60, Middlesex 54, Essex 34, and all 14 agree.</em></li>\n<li>Add the counts up. Write in a markdown cell why the sum has to equal the number of rows in <code>towns</code>. <em>Check yourself: 351.</em></li>\n<li>For each county, the total population of its towns, and the share of those people living in towns with a bill over $10,000. Use <code>sum()</code> and a <code>CASE WHEN</code> inside it, or two queries. <em>Check yourself: the totals add up to 7,136,171.</em></li>\n</ol>\n<span class=\"paragraph\"><strong>Going further.</strong> Answer one question of your own about the towns with <code>GROUP BY</code>, and check it in polars on <code>town_rows</code>. Or download the TV show database from <a href=\"https://oim7510.github.io/downloads/\" rel=\"noopener noreferrer\" target=\"_blank\">Downloads</a>, keep it out of your repository, and answer the two TV show questions from the topic slides.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "c64d616861c10560c7a19125454b29b2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"5-views\">5. Views</h1>\n<span class=\"paragraph\">A <strong>view</strong> is a query with a name. The cell that builds the database saved the first query of section 4 as <code>high_bill_towns_by_county</code>. Asking for it by name runs that query again, on the rows as they are at that moment, so a view stores no rows of its own and is never out of date. Section 4's query listed the counties in order; a view keeps no order, so put the <code>ORDER BY</code> in the question you ask of it.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "26c29b84d27276e5089e7e93b9a706f9",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "dc5486f8a0542c682bf19aef50190e8a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">It returns the same rows as section 4's first query. In your database project, save the question the business asks every week the same way, in the cell that builds your database.</span>\n<span class=\"paragraph\">Full reference: <a href=\"https://oim7510.github.io/handbooks/sql/04-building-and-loading/#28-views\" rel=\"noopener noreferrer\" target=\"_blank\">SQL \u00a728</a></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "9515b9e216d9b7f586517edd61034cda",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"e-northwinds-orders\">\u270f\ufe0f E \u00b7 Northwind's Orders</h2>\n<span class=\"paragraph\">Northwind, the company in the topic slides and the SQL handbook, keeps its 16,282 orders in one file on the course site. The cell below downloads the file to your <code>data</code> folder, once, and counts the orders. A query can read a file directly, with the file's path in place of a table name; write each query below the same way, with <code>orders_file</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "4bf85498e810420ebb569c0797c110e8",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "1754cc0a1be9c542861085cc24cb0bdb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><ol>\n<li>How many different countries did Northwind ship orders to? Use the column <code>ShipCountry</code>. <em>Check yourself: 21.</em></li>\n<li>For each country, the number of orders and the total of <code>Freight</code>, the most freight first. <em>Check yourself: USA with 2,328 orders and 573,251 in freight, then Germany with 2,193 and 537,189.75, then France with 1,778 and 442,055.75.</em></li>\n</ol>\n<span class=\"paragraph\"><strong>Going further.</strong> Rank the countries by freight per order instead, and see which countries move.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "a29ff83358cedb190f2d82bd8c63e255",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"this-weeks-work\">\ud83d\ude80 This Week's Work</h1>\n<ol>\n<li><strong>What is due is listed under <em>Before next session</em> in the post-class notes.</strong> I post them on the session page after each class, with the sections we reached, and the checkpoint on Canvas lists the same items.</li>\n<li><strong><a href=\"https://oim7510.github.io/assignments/database-project/\" rel=\"noopener noreferrer\" target=\"_blank\">The database project</a></strong>, Part A, due Sunday 11/08</li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "81283c0067831d792da9437eb5bc36ee",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><strong>Self-check:</strong></span>\n<ul class=\"task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can turn a diagram into <code>CREATE TABLE</code> statements with the keys declared</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can explain what a primary key, a foreign key, <code>NOT NULL</code> and <code>CHECK</code> each refuse</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can build a database file from data and read it with a function that closes it again</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can ask one table a question with <code>SELECT</code>, <code>WHERE</code>, <code>ORDER BY</code> and <code>LIMIT</code></li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can count groups with <code>GROUP BY</code>, keep some of them with <code>HAVING</code>, and check the counts against a total I know</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled/> I can save a query as a view and ask for it by name</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
