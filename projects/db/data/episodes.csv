@@ -1,56 +1,64 @@
-episode_number,title,isbn,release_date,duration_minutes,status
-1,La plaza del Diamante,9780002979757,2025-11-03,47,published
-2,La amortajada,9780002821377,2025-11-10,55,published
-3,La casa de Bernarda Alba,9780002504614,2025-11-19,53,published
-4,La hora de la estrella,9780001871090,2025-11-28,51,published
-5,La metamorfosis,9780001316768,2025-12-03,40,published
-6,La metamorfosis (parte 2),9780001316768,2025-12-10,51,published
-7,Cometierra,9780004563558,2025-12-21,36,published
-8,Cometierra (parte 2),9780004563558,2025-12-23,32,published
-9,Distancia de rescate,9780003058949,2026-01-02,52,published
-10,El libro de arena,9780001712713,2026-01-11,56,published
-11,El libro de arena (parte 2),9780001712713,2026-01-16,28,published
-12,El cuerpo en que nací,9780003296518,2026-01-24,39,published
-13,Aura,9780002267045,2026-01-30,46,published
-14,Bonsái,9780003454895,2026-02-04,49,published
-15,La invención de Morel,9780002662994,2026-02-11,52,published
-16,Agua viva,9780001950283,2026-02-22,73,published
-17,Agua viva (parte 2),9780001950283,2026-02-25,39,published
-18,El coronel no tiene quien le escriba,9780001237575,2026-03-08,36,published
-19,La campana de cristal,9780004088419,2026-03-12,45,published
-20,Todos deberíamos ser feministas,9780004009223,2026-03-19,54,published
-21,Bestiario,9780001791909,2026-03-25,23,published
-22,La última niebla,9780002900560,2026-04-02,33,published
-23,El principito,9780003771657,2026-04-08,60,published
-24,El principito (parte 2),9780003771657,2026-04-13,45,published
-25,Pedro Páramo,9780001000001,2026-04-20,59,published
-26,El libro de los abrazos,9780004405179,2026-05-01,56,published
-27,Cartas a un joven poeta,9780002425421,2026-05-07,56,published
-28,Los adioses,9780003613278,2026-05-17,50,published
-29,Una habitación en Babel,9780004880310,2026-05-21,69,published
-30,Una habitación en Babel (parte 2),9780004880310,2026-05-25,41,published
-31,La virgen de los sicarios,9780004246796,2026-06-05,39,published
-32,La virgen de los sicarios (parte 2),9780004246796,2026-06-10,32,published
-33,Formas de volver a casa,9780003375701,2026-06-19,55,published
-34,Temporada de huracanes,9780003217322,2026-06-25,54,published
-35,Bodas de sangre,9780002583800,2026-07-05,52,published
-36,Platero y yo,9780002742184,2026-07-09,39,published
-37,La oveja negra y demás fábulas,9780004325989,2026-07-14,66,published
-38,Nadie nada nunca,9780004642741,2026-07-22,33,published
-39,Rebelión en la granja,9780003850840,2026-07-31,40,published
-40,Estrella distante,9780003534085,2026-08-07,41,published
-41,La condesa sangrienta,9780004484365,2026-08-13,48,published
-42,El túnel,9780002029476,2026-08-17,31,published
-43,El túnel (parte 2),9780002029476,2026-08-26,73,published
-44,Léxico familiar,9780004959504,2026-09-06,49,published
-45,Léxico familiar (parte 2),9780004959504,2026-09-12,44,published
-46,Carta a una desconocida,9780004801124,2026-09-20,49,published
-47,Carta a una desconocida (parte 2),9780004801124,2026-09-27,57,published
-48,Crónica de una muerte anunciada,9780001158382,2026-09-28,53,published
-49,Los peligros de fumar en la cama,9780003138139,2026-10-09,46,published
-50,Un cuarto propio,9780003930030,2026-10-15,39,published
-51,El extranjero,9780001395954,2026-10-22,43,published
-52,Cuentos de amor de locura y de muerte,9780003692464,2026-10-29,70,published
-53,La caída,9780001475144,2026-11-04,27,scheduled
-54,El Aleph,9780001633520,2026-11-11,41,scheduled
-55,La tregua,9780002108669,2026-11-18,63,draft
+episode_id,title,publish_date,duration_seconds,plays_total,audience_total,book_id
+1,MOMFLUENCERS: Los Reyes de la Casa,2025-08-05,3375,1655,789,1
+2,Todo sobre el caso Giséle Pelicot,2025-08-12,3235,1521,824,2
+3,Memorias de una Milennial,2025-08-19,3138,1064,535,3
+4,"Romina Pistolas: escritora, stripper y sensación en TikTok",2025-08-26,4370,2515,1229,4
+5,Tu thriller favorito: La paciente silenciosa,2025-09-02,3318,1386,701,5
+6,"Madres, hijas y otras rivalidades: Golpéate el corazón",2025-09-09,2923,954,482,6
+7,"Andrés Montero: La muerte, los cuentos y el campo chileno",2025-09-16,3230,1208,601,7
+8,"Divorcio, envidia y amistades adultas: The Wedding People",2025-09-23,2848,910,465,8
+9,El tabú de la salud sexual femenina: Josefa Cortés,2025-09-30,3306,1224,721,9
+10,"Cuentos, terror y otras rarezas: Las cosas que perdimos en el fuego",2025-10-07,2791,904,497,10
+11,¿Lo viste o lo leíste? Todos quieren a Daisy Jones,2025-10-14,2805,810,427,11
+12,Francisca Feuerhake: el lado lector de la Vieja Cuica,2025-10-21,3728,1715,836,
+13,Leer para contarnos: Paz y la no ficción,2025-10-28,2748,1333,750,12
+14,Leer para contarnos: Paula y el duelo,2025-11-04,3058,920,461,13
+15,Cuando los padres no aceptan a los hijos: Sobre mi hija,2025-11-11,2410,786,475,14
+16,¿Qué hago para leer más?,2025-11-18,4104,983,432,
+17,"Apartheid, racismo e identidad: Born a Crime",2025-11-25,2857,662,340,15
+18,La historia oculta de los child stars,2025-12-02,2831,702,349,16
+19,Emprender leyendo mujeres: Autoras Librería,2025-12-09,3673,711,362,
+20,Cuando no comer carne se vuelve violento: La Vegetariana,2025-12-16,2905,921,512,17
+21,La intimidad ajena: Canción Dulce,2025-12-23,3043,666,336,18
+22,Relaciones tóxicas: Gente Normal con Milagros Mir,2025-12-30,3900,1176,554,19
+23,"Distopías, cultos y religión: Las indignas",2026-01-06,3007,773,416,20
+24,Las lecturas de la Reina del Dato,2026-01-13,3717,1220,626,
+25,Lo leíste o lo viste: Limpia,2026-01-20,2768,834,422,21
+26,Las copuchas de los 90: La era del entusiasmo,2026-01-27,3249,1111,626,22
+27,¿Por qué todos hablan de Hamnet?,2026-03-03,2734,1479,876,23
+28,Lo que se hereda no se hurta,2026-03-10,3191,896,471,24
+29,Cumbres borrascosas: la polémica,2026-03-17,3305,999,493,25
+30,Ficcionar sobre la historia - Entreletras,2026-03-24,3561,908,399,26
+31,Vivir en un personaje,2026-03-31,2628,595,311,27
+32,Almuerzos de pega,2026-04-07,3020,710,345,28
+33,Love Story: ¿Historia de amor o de terror?,2026-04-14,3367,1195,670,
+34,Una historia de divorcio,2026-04-21,2925,873,425,29
+35,Mujeres asesinas con Andrea Hartung,2026-04-27,3746,870,429,30
+36,Paz y Paula sin editar,2026-05-05,3193,904,457,
+37,La historia íntima de Isabel Allende,2026-05-12,3145,1254,665,31
+38,"Chile, 1891: amor en tiempos de guerra civil",2026-05-19,2817,872,462,32
+39,"Sexualidad, vejez y feminismo",2026-05-26,2692,846,463,33
+40,La casa de los espíritus con Francisca Alegría,2026-06-02,3098,1202,605,34
+41,Una noche en la Blondie,2026-06-09,2971,999,589,35
+42,Casarse por conveniencia,2026-06-16,2870,797,453,36
+43,The drama: Hasta que un secreto nos separe,2026-06-23,2776,774,443,
+44,El arte de mentir: El adversario,2026-06-30,2661,763,437,37
+45,La trampa de las tradwifes,2026-07-07,2896,1240,735,38
+46,Parejas Gen Z vs Millennials,2026-07-14,2770,748,434,
+47,La mujer que odiaba su pega,2026-07-21,2838,962,542,39
+48,De libros y cahuines con la amika Valeria Luna,2026-07-28,3502,1001,562,
+49,Los mensajes detrás de La Odisea,2026-08-04,2993,951,548,40
+50,De crímenes y dilemas éticos,2026-08-11,2969,724,404,37
+51,Relaciones abiertas,2026-08-19,2619,970,602,
+52,Abuso eclesiástico entre mujeres,2026-08-25,4116,1046,540,
+53,Entendiendo a Benjamín Labatut,2026-09-01,2620,820,519,41
+54,Análisis al padre chileno,2026-09-08,2552,730,428,
+55,Todo sobre el caso de Viviana Haeger,2026-09-15,2833,845,496,
+56,El circo pobre,2026-09-22,2387,629,394,42
+57,Deseo sin culpa,2026-09-29,2619,771,429,
+58,La trastienda de Mis muertos tristes,2026-10-06,2576,692,396,43
+59,La enfermedad de la fama,2026-10-13,3227,793,423,44
+60,Crecer trans en el barrio,2026-10-20,2574,589,349,45
+61,Los traumas de nuestros padres,2026-10-27,2833,631,357,46
+62,¿Miedo a la vejez?,2026-11-03,2511,651,401,47
+63,¿Cuántas caras tiene el embarazo?,2026-11-10,2637,469,300,48

@@ -1,0 +1,66 @@
+n;title;date;length;plays;audience
+1;¿POR QUÉ NOTA AL MARGEN?;30/7/25;00:43;637;476
+2;MOMFLUENCERS: Los Reyes de la Casa;5/8/25;56:15;1655;789
+3;Todo sobre el caso Giséle Pelicot;12/8/25;53:55;1521;824
+4;Memorias de una Milennial;19/8/25;52:18;1064;535
+5;Romina Pistolas: escritora, stripper y sensación en TikTok;26/8/25;01:12:50;2515;1229
+6;Tu thriller favorito: La paciente silenciosa;2/9/25;55:18;1386;701
+7;Madres, hijas y otras rivalidades: Golpéate el corazón;9/9/25;48:43;954;482
+8;Andrés Montero: La muerte, los cuentos y el campo chileno;16/9/25;53:50;1208;601
+9;Divorcio, envidia y amistades adultas: The Wedding People;23/9/25;47:28;910;465
+10;El tabú de la salud sexual femenina: Josefa Cortés;30/9/25;55:06;1224;721
+11;Cuentos, terror y otras rarezas: Las cosas que perdimos en el fuego;7/10/25;46:31;904;497
+12;¿Lo viste o lo leíste? Todos quieren a Daisy Jones;14/10/25;46:45;810;427
+13;Francisca Feuerhake: el lado lector de la Vieja Cuica;21/10/25;01:02:08;1477;702
+13;Francisca Feuerhake: el lado lector de la Vieja Cuica (FILA DUPLICADA);21/10/25;01:02:08;238;134
+14;Leer para contarnos: Paz y la no ficción;28/10/25;45:48;1333;750
+15;Leer para contarnos: Paula y el duelo;4/11/25;50:58;920;461
+16;Cuando los padres no aceptan a los hijos: Sobre mi hija;11/11/25;40:10;786;475
+17;¿Qué hago para leer más?;18/11/25;01:08:24;983;432
+18;Apartheid, racismo e identidad: Born a Crime;25/11/25;47:37;662;340
+19;La historia oculta de los child stars;2/12/25;47:11;702;349
+20;Emprender leyendo mujeres: Autoras Librería;9/12/25;01:01:13;711;362
+21;Cuando no comer carne se vuelve violento: La Vegetariana;16/12/25;48:25;921;512
+22;La intimidad ajena: Canción Dulce;23/12/25;50:43;666;336
+23;Relaciones tóxicas: Gente Normal con Milagros Mir;30/12/25;01:05:00;1176;554
+24;Distopías, cultos y religión: Las indignas;6/1/26;50:07;773;416
+25;Las lecturas de la Reina del Dato;13/1/26;01:01:57;1220;626
+26;Lo leíste o lo viste: Limpia;20/1/26;46:08;834;422
+27;Las copuchas de los 90: La era del entusiasmo;27/1/26;54:09;1111;626
+28;¿Por qué todos hablan de Hamnet?;3/3/26;45:34;1479;876
+29;Lo que se hereda no se hurta;10/3/26;53:11;896;471
+30;Cumbres borrascosas: la polémica;17/3/26;55:05;999;493
+31;Ficcionar sobre la historia - Entreletras;24/3/26;59:21;908;399
+32;Vivir en un personaje;31/3/26;43:48;595;311
+33;Almuerzos de pega;7/4/26;50:20;710;345
+34;Love Story: ¿Historia de amor o de terror?;14/4/26;56:07;1195;670
+35;Una historia de divorcio;21/4/26;48:45;873;425
+36;Mujeres asesinas con Andrea Hartung;27/4/26;01:02:26;870;429
+37;Paz y Paula sin editar;5/5/26;53:13;904;457
+38;La historia íntima de Isabel Allende;12/5/26;52:25;1254;665
+39;Chile, 1891: amor en tiempos de guerra civil;19/5/26;46:57;872;462
+40;Sexualidad, vejez y feminismo;26/5/26;44:52;846;463
+41;La casa de los espíritus con Francisca Alegría;2/6/26;51:38;1202;605
+42;Una noche en la Blondie;9/6/26;49:31;999;589
+43;Casarse por conveniencia;16/6/26;47:50;797;453
+44;The drama: Hasta que un secreto nos separe;23/6/26;46:16;774;443
+45;El arte de mentir: El adversario;30/6/26;44:21;763;437
+46;La trampa de las tradwifes;7/7/26;48:16;1240;735
+47;Parejas Gen Z vs Millennials;14/7/26;46:10;748;434
+48;La mujer que odiaba su pega;21/7/26;47:18;962;542
+49;De libros y cahuines con la amika Valeria Luna;28/7/26;58:22;1001;562
+50;Los mensajes detrás de La Odisea;4/8/26;49:53;951;548
+51;De crímenes y dilemas éticos;11/8/26;49:29;724;404
+52;Relaciones abiertas;19/8/26;43:39;970;602
+53;Abuso eclesiástico entre mujeres;25/8/26;01:08:36;1046;540
+54;Entendiendo a Benjamín Labatut;1/9/26;43:40;820;519
+55;Análisis al padre chileno;8/9/26;42:32;730;428
+56;Todo sobre el caso de Viviana Haeger;15/9/26;47:13;845;496
+57;El circo pobre;22/9/26;39:47;629;394
+58;Deseo sin culpa;29/9/26;43:39;771;429
+59;La trastienda de Mis muertos tristes;6/10/26;42:56;692;396
+60;La enfermedad de la fama;13/10/26;53:47;793;423
+61;Crecer trans en el barrio;20/10/26;42:54;589;349
+62;Los traumas de nuestros padres;27/10/26;47:13;631;357
+63;¿Miedo a la vejez?;3/11/26;41:51;651;401
+64;¿Cuántas caras tiene el embarazo?;10/11/26;43:57;469;300

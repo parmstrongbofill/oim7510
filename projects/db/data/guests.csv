@@ -1,11 +1,11 @@
-guest_id,first_name,last_name,bio,contact_email
-1,Camila,Rojas,Editora independiente y lectora voraz,camila.rojas@example.com
-2,Tomás,Herrera,Profesor de literatura latinoamericana,tomas.herrera@example.com
-3,Valentina,Sosa,Traductora literaria,valentina.sosa@example.com
-4,Andrés,Pizarro,Crítico y columnista cultural,
-5,Lucía,Fernández,Escritora de cuentos,lucia.fernandez@example.com
-6,Martín,Echeverría,Librero,
-7,Daniela,Cortés,Booktuber,daniela.cortes@example.com
-8,Joaquín,Bravo,Bibliotecario,
-9,Renata,Molina,Periodista cultural,renata.molina@example.com
-10,Ignacio,Salas,Poeta,ignacio.salas@example.com
+guest_id,name
+1,Andrea Hartung
+2,Andrés Montero
+3,Francisca Alegría
+4,Francisca Feuerhake
+5,Josefa Cortés
+6,La Nota del Libro
+7,Milagros Mir
+8,Mónica Rincón
+9,Romina Pistolas
+10,Valeria Luna

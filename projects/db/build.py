@@ -16,7 +16,17 @@ def _():
         with duckdb.connect(database, read_only=True) as _con:
             return _con.sql(sql).pl()
 
-    return ask, database, duckdb, mo
+    return ask, database, duckdb, mo, pl
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## The Tables
+
+    This notebook deletes `database.duckdb`, builds six tables and a view from the CSV files in `data/`, and loads them. Run it from the top and you get the same database every time.
+    """)
+    return
 
 
 @app.cell
@@ -26,74 +36,93 @@ def _(database, duckdb, mo):
     with duckdb.connect(database) as _con:
         _con.execute("""
             CREATE TABLE books (
-                isbn      VARCHAR PRIMARY KEY,
-                title     VARCHAR NOT NULL,
-                author    VARCHAR NOT NULL,
-                pages     INTEGER NOT NULL CHECK (pages > 0 AND pages <= 300),
-                pub_year  INTEGER
+                book_id    INTEGER PRIMARY KEY,
+                title      VARCHAR NOT NULL,
+                author     VARCHAR,
+                price_clp  INTEGER CHECK (price_clp >= 0)
             )
         """)
         _con.execute("""
             CREATE TABLE guests (
-                guest_id       INTEGER PRIMARY KEY,
-                first_name     VARCHAR NOT NULL,
-                last_name      VARCHAR NOT NULL,
-                bio            VARCHAR,
-                contact_email  VARCHAR
+                guest_id  INTEGER PRIMARY KEY,
+                name      VARCHAR NOT NULL
             )
         """)
         _con.execute("""
             CREATE TABLE platforms (
-                name VARCHAR PRIMARY KEY
+                platform_id  INTEGER PRIMARY KEY,
+                name         VARCHAR NOT NULL UNIQUE
             )
         """)
         _con.execute("""
             CREATE TABLE episodes (
-                episode_number    INTEGER PRIMARY KEY,
+                episode_id        INTEGER PRIMARY KEY,
                 title             VARCHAR NOT NULL,
-                isbn              VARCHAR NOT NULL REFERENCES books(isbn),
-                release_date      DATE NOT NULL,
-                duration_minutes  INTEGER NOT NULL CHECK (duration_minutes > 0),
-                status            VARCHAR NOT NULL CHECK (status IN ('draft', 'scheduled', 'published'))
+                publish_date      DATE NOT NULL,
+                duration_seconds  INTEGER NOT NULL CHECK (duration_seconds > 0),
+                plays_total       INTEGER NOT NULL CHECK (plays_total >= 0),
+                audience_total    INTEGER NOT NULL CHECK (audience_total >= 0),
+                book_id           INTEGER REFERENCES books(book_id)
             )
         """)
         _con.execute("""
             CREATE TABLE episode_guests (
-                episode_number  INTEGER NOT NULL REFERENCES episodes(episode_number),
-                guest_id        INTEGER NOT NULL REFERENCES guests(guest_id),
-                role            VARCHAR,
-                PRIMARY KEY (episode_number, guest_id)
+                episode_id  INTEGER NOT NULL REFERENCES episodes(episode_id),
+                guest_id    INTEGER NOT NULL REFERENCES guests(guest_id),
+                PRIMARY KEY (episode_id, guest_id)
             )
         """)
         _con.execute("""
-            CREATE TABLE episode_platform_stats (
-                episode_number      INTEGER NOT NULL REFERENCES episodes(episode_number),
-                platform            VARCHAR NOT NULL REFERENCES platforms(name),
-                stat_date           DATE NOT NULL,
-                listens_cumulative  INTEGER NOT NULL CHECK (listens_cumulative >= 0),
-                ad_revenue_dollars  DECIMAL(10, 2) NOT NULL CHECK (ad_revenue_dollars >= 0),
-                PRIMARY KEY (episode_number, platform, stat_date)
+            CREATE TABLE platform_daily_stats (
+                stat_date    DATE NOT NULL,
+                platform_id  INTEGER NOT NULL REFERENCES platforms(platform_id),
+                plays        INTEGER NOT NULL CHECK (plays >= 0),
+                audience     INTEGER NOT NULL CHECK (audience >= 0),
+                PRIMARY KEY (stat_date, platform_id)
             )
         """)
         _data = mo.notebook_dir() / "data"
-        for _table in ["books", "guests", "platforms", "episodes", "episode_guests", "episode_platform_stats"]:
+        for _table in ["books", "guests", "platforms", "episodes", "episode_guests", "platform_daily_stats"]:
             _con.execute(f"INSERT INTO {_table} SELECT * FROM read_csv('{_data}/{_table}.csv', header=true, nullstr='')")
         _con.execute("""
-            CREATE VIEW episode_latest AS
-            SELECT e.episode_number, e.title, e.release_date, e.status, e.duration_minutes,
-                   b.author,
-                   count(s.platform) AS platforms_live,
-                   coalesce(sum(s.listens_cumulative), 0) AS listens,
-                   coalesce(sum(s.ad_revenue_dollars), 0) AS ad_revenue
+            CREATE VIEW episode_summary AS
+            SELECT e.episode_id, e.title, e.publish_date, dayname(e.publish_date) AS weekday,
+                   round(e.duration_seconds / 60.0, 1) AS minutes,
+                   e.plays_total, e.audience_total,
+                   b.title AS book, b.author, b.price_clp,
+                   count(eg.guest_id) AS guests
             FROM episodes e
-            JOIN books b ON b.isbn = e.isbn
-            LEFT JOIN (
-                SELECT * FROM episode_platform_stats
-                QUALIFY row_number() OVER (PARTITION BY episode_number, platform ORDER BY stat_date DESC) = 1
-            ) s ON s.episode_number = e.episode_number
+            LEFT JOIN books b ON b.book_id = e.book_id
+            LEFT JOIN episode_guests eg ON eg.episode_id = e.episode_id
             GROUP BY ALL
         """)
+    return
 
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT table_name, column_name, data_type
+    FROM information_schema.columns
+    WHERE table_schema = 'main' AND table_name NOT IN ('episode_summary')
+    ORDER BY table_name, ordinal_position
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## The Data
+
+    The data is real. It is the podcast *Nota al Margen*, as of 13 November 2026.
+
+    - **Real:** the 63 episodes (title, publish date, length, plays and audience, copied from Spotify for Creators), and the 1,044 daily rows of plays and audience (522 days, 10 June 2025 to 13 November 2026, two platforms each).
+    - **Added by me:** the book each episode discusses and its author (from my own episode plan), the price of each book in Chilean pesos from Buscalibre Chile (empty when I could not find a price), the guests (read from episode titles and my calendar), and the `episode_id` numbers. Spotify only numbered episodes up to 26, so I numbered all of them in publish order.
+    - **Cleaned:** the trailer is left out because it is not an episode, and Spotify listed episode 13 twice, so I added the two rows into one.
+
+    Two rows break the rule on purpose: episode 35 (*Mujeres asesinas con Andrea Hartung*, 27 April 2026, a Monday) and episode 51 (*Relaciones abiertas*, 19 August 2026, a Wednesday). The rule is "an episode comes out on Tuesday". It is real: these are the only two episodes that did not, and `CHECK` cannot hold it without refusing my own history.
+    """)
     return
 
 
@@ -106,27 +135,22 @@ def _(mo):
 
 
 @app.cell
-def _(ask, mo):
+def _(mo, pl):
     import altair as alt
 
-    _data = ask("""
-    SELECT episode_number, title, listens
-    FROM episode_latest
-    WHERE status = 'published' AND platforms_live > 0
-    ORDER BY episode_number
-    """)
+    _raw = pl.read_csv(mo.notebook_dir() / "data" / "platform_daily_stats.csv", try_parse_dates=True)
+    _spotify = _raw.filter(pl.col("platform_id") == 1)
     _chart = mo.ui.altair_chart(
-        _data.plot.line(
-            x=alt.X("episode_number", title="Episode number"),
-            y=alt.Y("listens", title="Listens so far, all platforms"),
-        ).properties(title="Listens so far for each published episode")
+        _spotify.plot.line(
+            x=alt.X("stat_date", title="Day"),
+            y=alt.Y("plays", title="Plays on Spotify that day"),
+        ).properties(title="Daily plays on Spotify, 10 June 2025 to 13 November 2026")
     )
-    _top = _data.sort("listens", descending=True).row(0, named=True)
     mo.vstack([
         _chart,
         mo.md(
-            f"Episode {_top['episode_number']}, *{_top['title']}*, has the most listens so far "
-            f"({_top['listens']:,}); the newest episodes sit lower only because they have had less time to collect listens."
+            "This looks like a real small podcast: plays climb from about 2,000 a month in August 2025 to over 5,000 a month "
+            "by mid-2026, spike on the days after a Tuesday release, and dip in February 2026, when no episode came out between 27 January and 3 March."
         ),
     ])
     return
@@ -148,10 +172,9 @@ def _(ask):
     UNION ALL SELECT 'platforms', count(*) FROM platforms
     UNION ALL SELECT 'episodes', count(*) FROM episodes
     UNION ALL SELECT 'episode_guests', count(*) FROM episode_guests
-    UNION ALL SELECT 'episode_platform_stats', count(*) FROM episode_platform_stats
+    UNION ALL SELECT 'platform_daily_stats', count(*) FROM platform_daily_stats
     """)
     return
-
 
 
 @app.cell(hide_code=True)
@@ -159,7 +182,7 @@ def _(mo):
     mo.md(r"""
     ## A Row It Refuses
 
-    A book of 450 pages breaks the rule that a book is never more than 300 pages. The database should say no.
+    A book with a negative price breaks the rule that a price is never below zero. The database should say no.
     """)
     return
 
@@ -168,7 +191,7 @@ def _(mo):
 def _(database, duckdb, mo):
     with duckdb.connect(database) as _con:
         try:
-            _con.execute("INSERT INTO books VALUES ('9780000000000', 'Libro muy largo', 'Autor de prueba', 450, 2020)")
+            _con.execute("INSERT INTO books VALUES (9999, 'Libro de prueba', 'Autor de prueba', -5000)")
             _result = "The row was accepted (this should not happen)"
         except duckdb.Error as _e:
             _result = f"The database refused the row: {_e}"
@@ -181,7 +204,7 @@ def _(mo):
     mo.md(r"""
     ## Answers You Already Knew
 
-    I wrote `make_data.py`, so I know three answers before asking. If the database agrees, the data loaded the way I meant it to.
+    I know my own show, so I know three answers before asking. If the database agrees, the data loaded the way I meant it to.
     """)
     return
 
@@ -189,8 +212,8 @@ def _(mo):
 @app.cell
 def _(ask, mo):
     mo.vstack([
-        mo.md("**How many episodes are published?** Expected: 52, because `make_data.py` writes 52 published episodes."),
-        ask("SELECT count(*) AS published_episodes FROM episodes WHERE status = 'published'"),
+        mo.md("**How many episodes are there?** Expected: 63. Spotify lists 65 items, minus the trailer and minus the duplicated episode 13."),
+        ask("SELECT count(*) AS episodes FROM episodes"),
     ])
     return
 
@@ -198,11 +221,12 @@ def _(ask, mo):
 @app.cell
 def _(ask, mo):
     mo.vstack([
-        mo.md("**Which guests never appeared in an episode?** Expected: Ignacio Salas, the one guest I invited but have not yet recorded."),
+        mo.md("**Which book did I talk about in two episodes?** Expected: *El adversario*, by Emmanuel Carrère, in episodes 44 and 50."),
         ask("""
-        SELECT first_name, last_name
-        FROM guests
-        WHERE guest_id NOT IN (SELECT guest_id FROM episode_guests)
+        SELECT b.title, b.author, list(e.episode_id ORDER BY e.episode_id) AS episodes
+        FROM books b JOIN episodes e ON e.book_id = b.book_id
+        GROUP BY b.book_id, b.title, b.author
+        HAVING count(*) > 1
         """),
     ])
     return
@@ -211,13 +235,12 @@ def _(ask, mo):
 @app.cell
 def _(ask, mo):
     mo.vstack([
-        mo.md("**Which published episodes have no stats at all?** Expected: episodes 19 and 41, the two rows that break the rule on purpose."),
+        mo.md("**Which episodes did not come out on a Tuesday?** Expected: episodes 35 and 51, the two rows that break the rule on purpose."),
         ask("""
-        SELECT episode_number, title
+        SELECT episode_id, title, publish_date, dayname(publish_date) AS weekday
         FROM episodes
-        WHERE status = 'published'
-          AND episode_number NOT IN (SELECT episode_number FROM episode_platform_stats)
-        ORDER BY episode_number
+        WHERE dayname(publish_date) <> 'Tuesday'
+        ORDER BY episode_id
         """),
     ])
     return
@@ -228,7 +251,7 @@ def _(mo):
     mo.md(r"""
     ## A View
 
-    `episode_latest` keeps one row per episode with its latest listens and ad revenue added up across platforms, so a question about episodes does not need to join and filter three tables every time.
+    `episode_summary` keeps one row per episode with its book, author, price, weekday and number of guests, so a question about episodes does not need to join three tables every time.
     """)
     return
 
@@ -236,13 +259,12 @@ def _(mo):
 @app.cell
 def _(ask):
     ask("""
-    SELECT episode_number, title, author, platforms_live, listens, ad_revenue
-    FROM episode_latest
-    ORDER BY listens DESC
+    SELECT episode_id, title, weekday, minutes, plays_total, book, author, guests
+    FROM episode_summary
+    ORDER BY plays_total DESC
     LIMIT 5
     """)
     return
-
 
 
 if __name__ == "__main__":

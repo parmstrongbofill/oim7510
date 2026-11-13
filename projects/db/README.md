@@ -2,98 +2,90 @@
 
 ## 1. The Scenario
 
-"Nota al Margen" is a Spanish-language literary and cultural podcast, co-hosted by two people, that picks a book to discuss every episode and distributes the show across Spotify, Apple Podcasts and YouTube. Today, episode planning, guest outreach and performance numbers live across a spreadsheet and screenshots from each platform's dashboard. There is no single place to ask whether a guest moves the needle on listens, whether episode length matters, or which day to publish.
+"Nota al Margen" is my Spanish-language literary and cultural podcast. I record it with a co-host, and every Tuesday we publish an episode, usually about one book. The show lives on Spotify. Today the numbers sit in Spotify for Creators dashboards and in a calendar sheet, so I cannot ask simple questions like "do guests bring more plays?" or "did the show grow after a particular month?". This database puts the episodes, the books, the guests and the daily plays in one place.
 
-**What it keeps today**
-- Episodes: a title, the book discussed, the release date, length in minutes, and a status (draft, scheduled or published).
-- Books discussed: title, author, page count (the hosts only cover books of at most ~300 pages), and the year published.
-- Guests: people who join an episode beyond the two regular hosts — name, a short bio, and contact info, which not everyone gives.
-- Platforms the show is distributed on: Spotify, Apple Podcasts, YouTube.
-- For every episode, on every platform it is live on: listens and ad revenue, recorded at several points in time, so the show can see growth, not just a current total.
+**What it keeps**
+- Episodes: a title, the publish date, the length in seconds, total plays and total audience so far, and the book discussed (if any).
+- Books discussed: title, author, and the price in Chilean pesos at Buscalibre Chile (some are empty because I could not find a price).
+- Guests: the people who joined an episode beyond the two hosts.
+- Platforms the show is on: Spotify, and "other platforms" (everything that is not Spotify).
+- For every day and every platform: plays and audience, so I can see growth over time and not only a total.
 
 **The rules it works by**
-- A book's page count is never more than 300.
-- An episode's length in minutes is more than zero.
-- An episode's status is one of draft, scheduled or published.
-- Listens and ad revenue are never negative.
-- An episode marked "published" has to actually be live on at least one platform.
+- An episode's length is more than zero seconds.
+- Plays and audience are never negative.
+- A book's price is never negative.
+- A platform has one row per day in the daily numbers.
+- An episode comes out on a Tuesday. *(Not enforced by the database, see section 4.)*
 
 **Business questions**
-1. The growth in listens from an episode's first recorded snapshot to its latest, biggest growth first.
-2. Whether episodes with a guest average more listens than solo episodes.
-3. Average listens by the day of the week an episode was released.
-4. Average listens by episode length, to see if there is a sweet spot.
-5. Ad revenue per 1,000 listens, by platform.
-6. Average listens by book author.
-7. Every "published" episode checked against the rule that it has at least one row in `episode_platform_stats`, and a list of any that break it. *(checks a rule)*
-8. The month with the largest total growth in listens across all episodes and platforms.
+1. The month in which total plays grew the most compared with the month before.
+2. Whether episodes with a guest average more plays than episodes without one.
+3. Whether episodes about a book average more plays than episodes that are not about a book.
+4. Average plays by episode length (under 45 minutes, 45 to 55, over 55).
+5. The day of the week with the most plays on average, using the daily numbers.
+6. For each guest, how many episodes they joined, the total plays of those episodes and the books discussed.
+7. Every episode that did not come out on a Tuesday, as a check of the Tuesday rule. *(checks a rule)*
 
 ## 2. The ERD
 
 ```mermaid
 erDiagram
-  BOOKS ||--o{ EPISODES : discussed_in
+  BOOKS |o--o{ EPISODES : discussed_in
   EPISODES ||--o{ EPISODE_GUESTS : features
   GUESTS ||--o{ EPISODE_GUESTS : appears_in
-  EPISODES ||--o{ EPISODE_PLATFORM_STATS : published_on
-  PLATFORMS ||--o{ EPISODE_PLATFORM_STATS : hosts
+  PLATFORMS ||--o{ PLATFORM_DAILY_STATS : measured_on
 
   BOOKS {
-    string isbn PK
+    int book_id PK
     string title
     string author
-    int pages
-    int pub_year
+    int price_clp
   }
   EPISODES {
-    int episode_number PK
+    int episode_id PK
     string title
-    string isbn FK
-    date release_date
-    int duration_minutes
-    string status
+    date publish_date
+    int duration_seconds
+    int plays_total
+    int audience_total
+    int book_id FK
   }
   GUESTS {
     int guest_id PK
-    string first_name
-    string last_name
-    string bio
-    string contact_email
+    string name
   }
   EPISODE_GUESTS {
-    int episode_number FK
-    int guest_id FK
-    string role
+    int episode_id PK, FK
+    int guest_id PK, FK
   }
   PLATFORMS {
-    string name PK
+    int platform_id PK
+    string name
   }
-  EPISODE_PLATFORM_STATS {
-    int episode_number PK, FK
-    string platform PK, FK
+  PLATFORM_DAILY_STATS {
     date stat_date PK
-    int listens_cumulative
-    decimal ad_revenue_dollars
+    int platform_id PK, FK
+    int plays
+    int audience
   }
 ```
 
 ## 3. What One Row Means
 
-- One row of `books` is one book the podcast has discussed or might discuss.
-- One row of `episodes` is one episode of the show — draft, scheduled or published.
+- One row of `books` is one book discussed in at least one episode.
+- One row of `episodes` is one published episode of the show.
 - One row of `guests` is one person who has joined the show as a guest.
 - One row of `episode_guests` is one guest's appearance on one episode.
-- One row of `platforms` is one place the show is distributed.
-- One row of `episode_platform_stats` is one listens/revenue snapshot for one episode on one platform, on one date.
+- One row of `platforms` is one place where the show is listened to.
+- One row of `platform_daily_stats` is the plays and the audience of one platform on one day.
 
 ## 4. Design Choices
 
-**Keys where the business already had one.** `books` uses the ISBN as its primary key because every book already has a unique one, and `episodes` uses `episode_number` because I already number my episodes. `platforms` uses the platform name, since it is a short fixed list (Spotify, Apple Podcasts, YouTube). For `guests` I used a made-up `guest_id` instead of the email, because some guests have no email on file and an email can change.
+**Real data, my own keys.** Everything here comes from my show, so the keys are numbers I made up: Spotify only numbered the episodes up to 26, so `episode_id` counts the episodes in publish order. A book gets a `book_id` because the same title can be misspelled between sources and a book has no ISBN in my records. `guests` also uses a made-up `guest_id`, since many guests are known only by a name.
 
-**Optional relationships.** A guest does not need an episode, because I sometimes invite someone who has not appeared yet. An episode does not need a guest, because many episodes are just me. A book does not need an episode, because I keep a list of books I have not discussed yet. An episode does not need stats rows, because drafts and scheduled episodes have no listens yet. The one required link is that every episode must have a book (`isbn` is NOT NULL), since each episode is about one book.
+**Optional relationships.** An episode does not need a book, because 14 of the 63 episodes are conversations and not about a book (`book_id` can be empty). An episode does not need a guest, because most are just the two of us. A book can be discussed in more than one episode (*El adversario* is in two). The table `episode_guests` holds the many-to-many link between episodes and guests, with both columns together as its key.
 
-**A rule my tables cannot hold.** "A published episode must be live on at least one platform" cannot be written as a constraint, because it depends on rows in another table. I check it with a query (business question 7: published episodes with no row in `episode_platform_stats`). The data has two episodes that break this rule on purpose.
+**A rule my tables cannot hold.** "An episode comes out on a Tuesday" could be written as a `CHECK`, but two real episodes (35, on a Monday, and 51, on a Wednesday) would be refused, and they are part of my history. So I check this rule with a query (business question 7) and I keep the two rows. These two rows break the rule on purpose.
 
-**One thing I changed.** I wanted the database to help me see how my listens grow, not just how many an episode has in total. So instead of one listens number per episode, I kept a row per episode, platform and date in `episode_platform_stats`, with a running total of listens. That lets me measure growth after release and compare platforms.
-
-
+**One thing I changed.** The first version of this design used made-up data about listens per episode, platform and snapshot date, with ad revenue. My real data does not have that: Spotify gives me the plays of each day, not of each episode on each day, and I have no ad revenue. I replaced that table with `platform_daily_stats` (one row per day and platform), and I used the price of each book as my money column. The totals of each episode stay in `episodes`. The daily plays and the sum of the episodes' plays do not match exactly (61,405 against 60,862), most likely because the daily numbers also count plays of the trailer and of other items that are not in my episode list.
