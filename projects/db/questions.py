@@ -209,7 +209,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    #What is the average number of plays by episode length?
+    # 4. What is the average number of plays by episode length?
     """)
     return
 
@@ -233,6 +233,91 @@ def _(ask):
 def _(mo):
     mo.md(r"""
     Longer episodes get more plays: the 15 episodes over 55 minutes average 1,240, while the 13 under 45 minutes average 716. Many long episodes have a guest, but they still do better without one
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # 5. Which day of the week has the most plays on average?
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT dayname(stat_date) AS weekday,
+           round(avg(day_plays), 1) AS avg_daily_plays
+    FROM (
+        SELECT stat_date, sum(plays) AS day_plays
+        FROM platform_daily_stats
+        WHERE stat_date >= (SELECT min(publish_date) FROM episodes)
+          AND stat_date < DATE '2026-11-01'
+        GROUP BY stat_date
+    )
+    GROUP BY weekday
+    ORDER BY 2 DESC
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Wednesday is the strongest day with 215 plays on average, the day after the Tuesday release.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # 7. Which episodes did not come out on a Tuesday? (checks a rule)
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT episode_id, title, publish_date, dayname(publish_date) AS weekday
+    FROM episodes
+    WHERE dayname(publish_date) <> 'Tuesday'
+    ORDER BY episode_id
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Exactly 2 of 63 episodes break the rule: episode 35, published on a Monday, and episode 51, published on a Wednesday
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    # 8. Which episode has the best share of audience over plays?
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT e.episode_id, e.title, e.plays_total, e.audience_total,
+           round(e.audience_total * 1.0 / e.plays_total, 3) AS audience_share,
+           b.title AS book, g.name AS guest
+    FROM episodes e
+    LEFT JOIN books b ON b.book_id = e.book_id
+    LEFT JOIN episode_guests eg ON eg.episode_id = e.episode_id
+    LEFT JOIN guests g ON g.guest_id = eg.guest_id
+    ORDER BY audience_share DESC
+    LIMIT 5
     """)
     return
 
