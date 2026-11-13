@@ -87,6 +87,7 @@ erDiagram
 - One row of `episode_platform_stats` is one listens/revenue snapshot for one episode on one platform, on one date.
 
 ## 4. Design Choices
+
 **Keys where the business already had one.** `books` uses the ISBN as its primary key because every book already has a unique one, and `episodes` uses `episode_number` because I already number my episodes. `platforms` uses the platform name, since it is a short fixed list (Spotify, Apple Podcasts, YouTube). For `guests` I used a made-up `guest_id` instead of the email, because some guests have no email on file and an email can change.
 
 **Optional relationships.** A guest does not need an episode, because I sometimes invite someone who has not appeared yet. An episode does not need a guest, because many episodes are just me. A book does not need an episode, because I keep a list of books I have not discussed yet. An episode does not need stats rows, because drafts and scheduled episodes have no listens yet. The one required link is that every episode must have a book (`isbn` is NOT NULL), since each episode is about one book.

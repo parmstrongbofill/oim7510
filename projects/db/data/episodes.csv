@@ -1,0 +1,56 @@
+episode_number,title,isbn,release_date,duration_minutes,status
+1,La plaza del Diamante,9780002979757,2025-11-03,47,published
+2,La amortajada,9780002821377,2025-11-10,55,published
+3,La casa de Bernarda Alba,9780002504614,2025-11-19,53,published
+4,La hora de la estrella,9780001871090,2025-11-28,51,published
+5,La metamorfosis,9780001316768,2025-12-03,40,published
+6,La metamorfosis (parte 2),9780001316768,2025-12-10,51,published
+7,Cometierra,9780004563558,2025-12-21,36,published
+8,Cometierra (parte 2),9780004563558,2025-12-23,32,published
+9,Distancia de rescate,9780003058949,2026-01-02,52,published
+10,El libro de arena,9780001712713,2026-01-11,56,published
+11,El libro de arena (parte 2),9780001712713,2026-01-16,28,published
+12,El cuerpo en que nací,9780003296518,2026-01-24,39,published
+13,Aura,9780002267045,2026-01-30,46,published
+14,Bonsái,9780003454895,2026-02-04,49,published
+15,La invención de Morel,9780002662994,2026-02-11,52,published
+16,Agua viva,9780001950283,2026-02-22,73,published
+17,Agua viva (parte 2),9780001950283,2026-02-25,39,published
+18,El coronel no tiene quien le escriba,9780001237575,2026-03-08,36,published
+19,La campana de cristal,9780004088419,2026-03-12,45,published
+20,Todos deberíamos ser feministas,9780004009223,2026-03-19,54,published
+21,Bestiario,9780001791909,2026-03-25,23,published
+22,La última niebla,9780002900560,2026-04-02,33,published
+23,El principito,9780003771657,2026-04-08,60,published
+24,El principito (parte 2),9780003771657,2026-04-13,45,published
+25,Pedro Páramo,9780001000001,2026-04-20,59,published
+26,El libro de los abrazos,9780004405179,2026-05-01,56,published
+27,Cartas a un joven poeta,9780002425421,2026-05-07,56,published
+28,Los adioses,9780003613278,2026-05-17,50,published
+29,Una habitación en Babel,9780004880310,2026-05-21,69,published
+30,Una habitación en Babel (parte 2),9780004880310,2026-05-25,41,published
+31,La virgen de los sicarios,9780004246796,2026-06-05,39,published
+32,La virgen de los sicarios (parte 2),9780004246796,2026-06-10,32,published
+33,Formas de volver a casa,9780003375701,2026-06-19,55,published
+34,Temporada de huracanes,9780003217322,2026-06-25,54,published
+35,Bodas de sangre,9780002583800,2026-07-05,52,published
+36,Platero y yo,9780002742184,2026-07-09,39,published
+37,La oveja negra y demás fábulas,9780004325989,2026-07-14,66,published
+38,Nadie nada nunca,9780004642741,2026-07-22,33,published
+39,Rebelión en la granja,9780003850840,2026-07-31,40,published
+40,Estrella distante,9780003534085,2026-08-07,41,published
+41,La condesa sangrienta,9780004484365,2026-08-13,48,published
+42,El túnel,9780002029476,2026-08-17,31,published
+43,El túnel (parte 2),9780002029476,2026-08-26,73,published
+44,Léxico familiar,9780004959504,2026-09-06,49,published
+45,Léxico familiar (parte 2),9780004959504,2026-09-12,44,published
+46,Carta a una desconocida,9780004801124,2026-09-20,49,published
+47,Carta a una desconocida (parte 2),9780004801124,2026-09-27,57,published
+48,Crónica de una muerte anunciada,9780001158382,2026-09-28,53,published
+49,Los peligros de fumar en la cama,9780003138139,2026-10-09,46,published
+50,Un cuarto propio,9780003930030,2026-10-15,39,published
+51,El extranjero,9780001395954,2026-10-22,43,published
+52,Cuentos de amor de locura y de muerte,9780003692464,2026-10-29,70,published
+53,La caída,9780001475144,2026-11-04,27,scheduled
+54,El Aleph,9780001633520,2026-11-11,41,scheduled
+55,La tregua,9780002108669,2026-11-18,63,draft
