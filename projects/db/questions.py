@@ -47,5 +47,116 @@ def _(mo):
     return
 
 
+@app.cell
+def _(ask):
+    ask("""
+    SELECT g.name, e.episode_id, b.title AS book
+    FROM guests g
+    JOIN episode_guests eg ON eg.guest_id = g.guest_id
+    JOIN episodes e ON e.episode_id = eg.episode_id
+    LEFT JOIN books b ON b.book_id = e.book_id
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    The join has 11 rows before grouping, as I predicted
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT g.name,
+           count(DISTINCT e.episode_id) AS episodes,
+           sum(e.audience_total) AS plays,
+           string_agg(b.title, '; ') AS books
+    FROM guests g
+    JOIN episode_guests eg ON eg.guest_id = g.guest_id
+    JOIN episodes e ON e.episode_id = eg.episode_id
+    LEFT JOIN books b ON b.book_id = e.book_id
+    GROUP BY g.guest_id, g.name
+    ORDER BY plays DESC
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Romina Pistolas brings the most plays with 2 episodes
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## 1. In which month did total plays grow the most compared with the month before?
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT date_trunc('month', stat_date)::DATE AS month,
+           sum(plays) AS plays
+    FROM platform_daily_stats
+    GROUP BY month
+    ORDER BY month
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    WITH m AS (
+        SELECT date_trunc('month', stat_date)::DATE AS month,
+               sum(plays) AS plays
+        FROM platform_daily_stats
+        GROUP BY 1
+    )
+    SELECT month,
+           plays,
+           plays - lag(plays) OVER (ORDER BY month) AS growth
+    FROM m
+    ORDER BY month
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    WITH m AS (
+        SELECT date_trunc('month', stat_date)::DATE AS month,
+               sum(plays) AS plays
+        FROM platform_daily_stats
+        WHERE stat_date < DATE '2026-11-01'
+        GROUP BY 1
+    )
+    SELECT month,
+           plays,
+           plays - lag(plays) OVER (ORDER BY month) AS growth
+    FROM m
+    ORDER BY growth DESC NULLS LAST
+    LIMIT 5
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    March 2026 grew the most: 4,392 plays, which is 2,505 more than February. November is left out because it is not finished.
+    """)
+    return
+
+
 if __name__ == "__main__":
     app.run()
