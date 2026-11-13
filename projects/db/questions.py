@@ -178,5 +178,64 @@ def _(ask):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## 3. Do episodes about a book average more plays than episodes that are not about a book?
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT book_id IS NOT NULL AS about_a_book,
+           count(*) AS episodes,
+           round(avg(plays_total)) AS avg_plays
+    FROM episodes
+    GROUP BY book_id IS NOT NULL
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    There is no real difference: the 49 episodes about a book average 964 plays and the 14 that are not average 972
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #What is the average number of plays by episode length?
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT CASE WHEN duration_seconds < 2700 THEN '1. under 45 min'
+                WHEN duration_seconds <= 3300 THEN '2. 45 to 55 min'
+                ELSE '3. over 55 min' END AS length,
+           count(*) AS episodes,
+           round(avg(plays_total)) AS avg_plays
+    FROM episodes
+    GROUP BY 1
+    ORDER BY 1
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Longer episodes get more plays: the 15 episodes over 55 minutes average 1,240, while the 13 under 45 minutes average 716. Many long episodes have a guest, but they still do better without one
+    """)
+    return
+
+
 if __name__ == "__main__":
     app.run()
