@@ -20,7 +20,7 @@ def _():
         with duckdb.connect(database, read_only=True) as _con:
             return _con.sql(sql).pl()
 
-    return as_of, ask, mo
+    return as_of, ask, mo, pl
 
 
 @app.cell(hide_code=True)
@@ -318,6 +318,44 @@ def _(ask):
     LEFT JOIN guests g ON g.guest_id = eg.guest_id
     ORDER BY audience_share DESC
     LIMIT 5
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## How I Know These Numbers Are Right
+    """)
+    return
+
+
+@app.cell
+def _(mo, pl):
+    _episodes = pl.read_csv(mo.notebook_dir() / "data" / "episodes.csv")
+    _with_book = _episodes.filter(pl.col("book_id").is_not_null())
+    _without_book = _episodes.filter(pl.col("book_id").is_null())
+
+    mo.md(
+        f"With a book: {_with_book.height} episodes, average {_with_book['plays_total'].mean():,.0f} plays. "
+        f"Without a book: {_without_book.height} episodes, average {_without_book['plays_total'].mean():,.0f} plays."
+    )
+    return
+
+
+@app.cell
+def _(mo, pl):
+    _ep = pl.read_csv(mo.notebook_dir() / "data" / "episodes.csv", try_parse_dates=True)
+    _not_tuesday = _ep.filter(pl.col("publish_date").dt.weekday() != 2)
+
+    _not_tuesday.select("episode_id", "title", "publish_date")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    I checked two answers a second way, with polars on the CSV files in `data/`. For question 3, the CSV gives 49 episodes about a book (average 964 plays) and 14 that are not (average 972), the same as SQL. For question 7, the CSV gives the same two episodes that did not come out on a Tuesday: 35 and 51.
     """)
     return
 
