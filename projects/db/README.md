@@ -87,4 +87,12 @@ erDiagram
 - One row of `episode_platform_stats` is one listens/revenue snapshot for one episode on one platform, on one date.
 
 ## 4. Design Choices
+**Keys where the business already had one.** `books` uses the ISBN as its primary key because every book already has a unique one, and `episodes` uses `episode_number` because I already number my episodes. `platforms` uses the platform name, since it is a short fixed list (Spotify, Apple Podcasts, YouTube). For `guests` I used a made-up `guest_id` instead of the email, because some guests have no email on file and an email can change.
+
+**Optional relationships.** A guest does not need an episode, because I sometimes invite someone who has not appeared yet. An episode does not need a guest, because many episodes are just me. A book does not need an episode, because I keep a list of books I have not discussed yet. An episode does not need stats rows, because drafts and scheduled episodes have no listens yet. The one required link is that every episode must have a book (`isbn` is NOT NULL), since each episode is about one book.
+
+**A rule my tables cannot hold.** "A published episode must be live on at least one platform" cannot be written as a constraint, because it depends on rows in another table. I check it with a query (business question 7: published episodes with no row in `episode_platform_stats`). The data has two episodes that break this rule on purpose.
+
+**One thing I changed.** I wanted the database to help me see how my listens grow, not just how many an episode has in total. So instead of one listens number per episode, I kept a row per episode, platform and date in `episode_platform_stats`, with a running total of listens. That lets me measure growth after release and compare platforms.
+
 
