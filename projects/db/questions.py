@@ -158,5 +158,25 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## 2. Do episodes with a guest average more plays than episodes without one?
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT guests > 0 AS has_guest,
+           count(*) AS episodes,
+           round(avg(plays_total)) AS avg_plays
+    FROM episode_summary
+    GROUP BY has_guest
+    """)
+    return
+
+
 if __name__ == "__main__":
     app.run()
