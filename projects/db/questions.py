@@ -36,65 +36,6 @@ def _(as_of, mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ## Reading It Back
-
-    **The question I picked:** business question 6, *for each guest, how many episodes they joined, the total plays of those episodes and the books discussed.* It uses four tables: `guests`, `episode_guests`, `episodes` and `books`.
-
-    **My prediction, written before running anything:** the join will have **11 rows before grouping**.
-
-    **Why:** `episode_guests` has 11 rows, and each row is one guest in one episode. Joining it to `guests` adds one guest to each row, joining it to `episodes` adds one episode to each row, and joining it to `books` with a `LEFT JOIN` adds at most one book to each row (an episode has one book or none). No join can add a second match to a row, so the number of rows stays at 11. After grouping by guest I expect one row per guest who appears in an episode.
-    """)
-    return
-
-
-@app.cell
-def _(ask):
-    ask("""
-    SELECT g.name, e.episode_id, b.title AS book
-    FROM guests g
-    JOIN episode_guests eg ON eg.guest_id = g.guest_id
-    JOIN episodes e ON e.episode_id = eg.episode_id
-    LEFT JOIN books b ON b.book_id = e.book_id
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    The join has 11 rows before grouping, as I predicted
-    """)
-    return
-
-
-@app.cell
-def _(ask):
-    ask("""
-    SELECT g.name,
-           count(DISTINCT e.episode_id) AS episodes,
-           sum(e.audience_total) AS plays,
-           string_agg(b.title, '; ') AS books
-    FROM guests g
-    JOIN episode_guests eg ON eg.guest_id = g.guest_id
-    JOIN episodes e ON e.episode_id = eg.episode_id
-    LEFT JOIN books b ON b.book_id = e.book_id
-    GROUP BY g.guest_id, g.name
-    ORDER BY plays DESC
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    Romina Pistolas brings the most plays with 2 episodes
-    """)
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
     ## 1. In which month did total plays grow the most compared with the month before?
     """)
     return
@@ -209,7 +150,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # 4. What is the average number of plays by episode length?
+    ## 4. What is the average number of plays by episode length?
     """)
     return
 
@@ -240,7 +181,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # 5. Which day of the week has the most plays on average?
+    ## 5. Which day of the week has the most plays on average?
     """)
     return
 
@@ -274,7 +215,40 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # 7. Which episodes did not come out on a Tuesday? (checks a rule)
+    ## 6. For each guest: how many episodes, the plays of those episodes, and the books discussed
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT g.name,
+           count(DISTINCT e.episode_id) AS episodes,
+           sum(e.plays_total) AS plays,
+           string_agg(b.title, '; ') AS books
+    FROM guests g
+    JOIN episode_guests eg ON eg.guest_id = g.guest_id
+    JOIN episodes e ON e.episode_id = eg.episode_id
+    LEFT JOIN books b ON b.book_id = e.book_id
+    GROUP BY g.guest_id, g.name
+    ORDER BY plays DESC
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    Romina Pistolas brings the most plays: 3,286 in 2 episodes.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## 7. Which episodes did not come out on a Tuesday? (checks a rule)
     """)
     return
 
@@ -301,7 +275,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # 8. Which episode has the best share of audience over plays?
+    ## 8. Which episode has the best share of audience over plays?
     """)
     return
 
@@ -356,6 +330,56 @@ def _(mo, pl):
 def _(mo):
     mo.md(r"""
     I checked two answers a second way, with polars on the CSV files in `data/`. For question 3, the CSV gives 49 episodes about a book (average 964 plays) and 14 that are not (average 972), the same as SQL. For question 7, the CSV gives the same two episodes that did not come out on a Tuesday: 35 and 51.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Working With the Agent
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    I used the agent to help me build the tables and write the SQL. I told it my goal: to understand where the podcast can grow, and to analyze strategically the results for guests and for series, which are the episodes that are not about a book. The agent explained each query in small steps with blanks for me to fill in, and I typed the code myself in marimo. Along the way I also caught my own errors, such as using `audience_total` instead of `plays_total`, and I fixed them by running the cells in marimo and reading the results. What I learned is how to combine data from several tables with joins.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Reading It Back
+
+    **The question I picked:** business question 6, *for each guest, how many episodes they joined, the total plays of those episodes and the books discussed.* It uses four tables: `guests`, `episode_guests`, `episodes` and `books`.
+
+    **My prediction, written before running anything:** the join will have **11 rows before grouping**.
+
+    **Why:** `episode_guests` has 11 rows, and each row is one guest in one episode. Joining it to `guests` adds one guest to each row, joining it to `episodes` adds one episode to each row, and joining it to `books` with a `LEFT JOIN` adds at most one book to each row (an episode has one book or none). No join can add a second match to a row, so the number of rows stays at 11. After grouping by guest I expect one row per guest who appears in an episode.
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    ask("""
+    SELECT g.name, e.episode_id, b.title AS book
+    FROM guests g
+    JOIN episode_guests eg ON eg.guest_id = g.guest_id
+    JOIN episodes e ON e.episode_id = eg.episode_id
+    LEFT JOIN books b ON b.book_id = e.book_id
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    The join has 11 rows before grouping, as I predicted
     """)
     return
 
