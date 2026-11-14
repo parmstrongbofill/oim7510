@@ -384,5 +384,52 @@ def _(mo):
     return
 
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Going Further
+    """)
+    return
+
+
+@app.cell
+def _(ask):
+    _year = ask("""
+    SELECT date_trunc('month', stat_date)::DATE AS month,
+           sum(plays)::BIGINT AS plays
+    FROM platform_daily_stats
+    WHERE stat_date >= DATE '2025-08-01'
+      AND stat_date < DATE '2026-09-01'
+    GROUP BY 1
+    ORDER BY 1
+    """)
+    _year.plot.line(x="month", y="plays").properties(title="Monthly plays, August 2025 to August 2026")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    In one year the show grew from 2,018 plays in August 2025 to 5,674 in August 2026, an increase of 181%. The growth was not steady: plays fell in February 2026, when no episode came out for five weeks, and then jumped in March, the month with the biggest growth. The lesson for strategy is that publishing every week matters, and that guests and longer episodes (see questions 2 and 4) are where I can grow next.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    ## Time Spent
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    About 6 hours in total, between Part A (the README, the data and `build.py`) and Part B (this notebook).
+    """)
+    return
+
+
 if __name__ == "__main__":
     app.run()
