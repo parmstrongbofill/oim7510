@@ -192,6 +192,7 @@
     "8056158",
     "8065509",
     "8065591",
+    "8068432",
     "8068444",
     "8068583",
     "8070723",
@@ -594,6 +595,7 @@
     "8384127",
     "8384214",
     "8384411",
+    "8386082",
     "8386180"
   ],
   "hasbro": [
@@ -708,6 +710,7 @@
     "4439025009",
     "4439483009",
     "4442776009",
+    "4442935009",
     "4442960009",
     "4443857009",
     "4444585009",
@@ -780,6 +783,7 @@
     "/job/Billund/Experiences-Concept-Designer_0000038974",
     "/job/Billund/FP-A-Senior-Finance-Manager_0000039733",
     "/job/Billund/Global-Hard-Service-Specialist_0000039831",
+    "/job/Billund/Graphic-Designer--LEGO--DESiGN--12-month-fixed-term-contract-_0000039794",
     "/job/Billund/Industrial-Architect--Global-Workplace-Projects---NextGen-Factory_0000039825",
     "/job/Billund/Laboratory-Quality-Manager-Specialist_0000038328",
     "/job/Billund/Lead-Cyber-Security-Specialist_0000040031",
@@ -796,6 +800,7 @@
     "/job/Billund/Senior-Director--Adult-Consumer-Group-Portfolio---Marketing-Strategy_0000038633",
     "/job/Billund/Senior-Equipment-Engineer--Capability-Building_0000039862",
     "/job/Billund/Senior-Executive-Assistant-to-the-CEO-and-Head-of-Executive-Support_0000038979",
+    "/job/Billund/Senior-Manager--Guest-Experience-Insights---Performance_0000040019",
     "/job/Billund/Senior-Software-Engineer---Data-Migration_0000039621",
     "/job/Billund/Sr-BI-Analyst--Data-Engineering-_0000038336",
     "/job/Billund/Sr-Copywriter_0000039474",
@@ -901,6 +906,7 @@
     "/job/Monterrey/Sr-Moulding-Manager_0000038037",
     "/job/Monterrey/Warehouse-Preventive-Maintenance-Manager_0000035757",
     "/job/Munich/Senior-Key-Account-Manager--m-f-d--eCommerce--m-f-d-_0000039081",
+    "/job/Nashville/Seasonal-Sales-Associate_0000039494",
     "/job/New-York/Part-Time-Sales-Associate_0000039366",
     "/job/New-York/Part-Time-Team-Leader_0000039365",
     "/job/New-York/Seasonal-Part-Time-Sales-Associate_0000039370",
@@ -928,6 +934,8 @@
     "/job/Retail-Store-Danbury-Fair-Mall/Seasonal-Sales-Associate--Brick-Specialist----Danbury-Fair-Mall--CT-_0000039798-1",
     "/job/Retail-Store-Fashion-Place-Mall/Seasonal-Sales-Associate--Brick-Specialist----Fashion-Place--UT_0000039812",
     "/job/Retail-Store-Frankfurt-MTZ/Assistant-Store-Manager-M-W-D--LEGO-Store-Main-Taunus-Zentrum_0000033527",
+    "/job/Retail-Store-Frankfurt-MTZ/Verkufer--M-W-D--LEGO-Store-Main-Taunus-Zentrum---Teilzeit_0000040306",
+    "/job/Retail-Store-Glendale-Galleria/Part-Time-Team-Leader---Glendale--CA_0000040240",
     "/job/Retail-Store-King-of-Prussia-Mall/Sales-Associate--Brick-Specialist----King-of-Prussia--PA_0000037820",
     "/job/Retail-Store-King-of-Prussia-Mall/Seasonal-Sales-Associate--Brick-Specialist----King-of-Prussia--PA_0000040169",
     "/job/Retail-Store-Opry-Mills/Seasonal-Sales-Associate--Brick-Specialist----Opry-Mills--Tennessee_0000039398",
@@ -1524,7 +1532,8 @@
     "744000161191404",
     "744000161373340",
     "744000161510964",
-    "744000161564740"
+    "744000161564740",
+    "744000161574320"
   ],
   "quantis": [
     "4E6E4A4A37",
@@ -1746,7 +1755,9 @@
     "4726418006",
     "4726437006",
     "4726452006",
+    "4726471006",
     "4726495006",
+    "4726515006",
     "4726703006",
     "4726759006",
     "4726779006",
@@ -2323,6 +2334,8 @@
     "8366006",
     "8366370",
     "8367009",
+    "8368738",
+    "8368740",
     "8368751",
     "8370801",
     "8371351",
@@ -2331,6 +2344,9 @@
     "8372357",
     "8372717",
     "8374485",
+    "8374875",
+    "8374878",
+    "8374880",
     "8375255",
     "8375267",
     "8375797",
@@ -2353,6 +2369,7 @@
     "8380599",
     "8382757",
     "8383075",
+    "8383535",
     "8385632",
     "8385649",
     "8386043",
@@ -2360,6 +2377,8 @@
     "8386055",
     "8386057",
     "8386059",
-    "8386060"
+    "8386060",
+    "8386399",
+    "8386686"
   ]
 }
