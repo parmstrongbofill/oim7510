@@ -72,13 +72,13 @@ def _(ask):
 
 
 @app.cell
-def _(ask):
-    ask("""
+def _(as_of, ask):
+    ask(f"""
     WITH m AS (
         SELECT date_trunc('month', stat_date)::DATE AS month,
                sum(plays) AS plays
         FROM platform_daily_stats
-        WHERE stat_date < DATE '2026-11-01'
+        WHERE stat_date < date_trunc('month', DATE '{as_of}')
         GROUP BY 1
     )
     SELECT month,
@@ -187,15 +187,15 @@ def _(mo):
 
 
 @app.cell
-def _(ask):
-    ask("""
+def _(as_of, ask):
+    ask(f"""
     SELECT dayname(stat_date) AS weekday,
            round(avg(day_plays), 1) AS avg_daily_plays
     FROM (
         SELECT stat_date, sum(plays) AS day_plays
         FROM platform_daily_stats
         WHERE stat_date >= (SELECT min(publish_date) FROM episodes)
-          AND stat_date < DATE '2026-11-01'
+          AND stat_date < DATE '{as_of}'
         GROUP BY stat_date
     )
     GROUP BY weekday
